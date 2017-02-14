@@ -1,19 +1,17 @@
-{
-    title: "Academic Mentoring Program (AMP)",
-    courses: ['Bio 215', 'Bio 217', 'Bio 219', 'Chem 101', 'Chem 102', 'Chem 103', 'Econ 201', 'Econ 202', 'Econ 310', 'Stat 210'],
-    contact: 'jamila.anderson@northwestern.edu',
-    commitment: 'quarter-long',
+{ 
+	_id: "Q7TYkqypoXZrkc4TN",
+	all_text: "Academic Mentoring Program (AMP) Bio 215 Bio 217 Bio 219 Chem 101 Chem 102 Chem 103 Econ 201 Econ 202 Econ 310 Stat 210 jamila.anderson@northwestern.edu quarter-long",
+	title: "Academic Mentoring Program (AMP)",
+	"courses": ["Bio 215", "Bio 217", "Bio 219", "Chem 101", "Chem 102", "Chem 103", "Econ 201", "Econ 202", "Econ 310", "Stat 210"],
+	"contact": "jamila.anderson@northwestern.edu",
+	"commitment": "quarter-long",
 }, {
-    title: "Gateway Science Workshop (GSW)",
-    courses: ['Bio 215', 'Bio 217', 'Bio 219', 'Chem 101', 'Chem 102', 'Chem 103', 'Physics 135', 'Physics 130', 'EA 1', 'EA 2', 'EA 3', 'EA 4', 'Math 220', 'Math 224', 'Math 212', 'Math 213', 'Math 214', 'Math 230'],
-    contact: 'jamila.anderson@northwestern.edu',
-    commitment: 'quarter-long',
-}, {
-    title: "Tech Tutoring",
-    courses: ['Chem 101', 'Chem 102', 'Chem 103', 'Physics 135', 'Physics 130', 'EA 1', 'EA 2', 'EA 3', 'EA 4', 'Math 220', 'Math 224', 'Math 230'],
-    contact: 'ueoffice@northwestern.edu',
-    commitment: 'drop-in',
-    location: 'MG28',
-    days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-    times: ['2-5pm', '7-10pm'],
+	_id : "zQ7MCfTQxyANgwKcB", title: "Tech Tutoring", courses: ['Chem 101', 'Chem 102', 'Chem 103', 'Physics 135', 'Physics 130', 'EA 1', 'EA 2', 'EA 3', 'EA 4', 'Math 220', 'Math 224', 'Math 230'], contact: 'ueoffice@northwestern.edu', commitment: 'drop-in', location: 'MG28', days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], times: ['2-5pm', '7-10pm'], all_text: "Tech Tutoring Chem 101 Chem 102 Chem 103 Physics 135 Physics 130 EA 1 EA 2 EA 3 EA 4 Math 220 Math 224 Math 230 ueoffice@northwestern.edu drop-in MG28 Monday Tuesday Wednesday Thursday 2-5pm 7-10pm"
+}, { 
+	_id : "SgSo6FfRi7pNQJPF7",
+	title : "Gateway Science Workshop (GSW)",
+	courses : [ "Bio 215", "Bio 217", "Bio 219", "Chem 101", "Chem 102", "Chem 103", "Physics 135", "Physics 130", "EA 1", "EA 2", "EA 3", "EA 4", "Math 220", "Math 224", "Math 212", "Math 213", "Math 214", "Math 230" ],
+	contact : "jamila.anderson@northwestern.edu",
+	commitment : "quarter-long",
+	all_text : "Gateway Science Workshop (GSW) Bio 215 Bio 217 Bio 219 Chem 101 Chem 102 Chem 103 Physics 135 Physics 130 EA 1 EA 2 EA 3 EA 4 Math 220 Math 224 Math 212 Math 213 Math 214 Math 230 jamila.anderson@northwestern.edu quarter-long"
 }
