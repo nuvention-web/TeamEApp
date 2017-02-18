@@ -24,7 +24,7 @@ class App extends Component {
 		// Find text field via React ref
 		const txt = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
 
-		const result = AcademicResources.find();
+		// const result = AcademicResources.find({all_text : textDecoration = 'line-through'},);
 
 		// Clear form
 		ReactDOM.findDOMNode(this.refs.textInput).value = '';
