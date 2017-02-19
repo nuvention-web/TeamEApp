@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+	<title><%= title %></title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel='stylesheet' href='/stylesheets/grid.css' />
+	<link rel='stylesheet' href='/stylesheets/font-awesome.css' />
+	</head>
+	<body>
+	<div class="container">
+		<h1><%= title %></h1>
+	</div>
+
+	<ng-view></ng-view>
+
+	<!-- Libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.min.js"></script>
+
+	<!-- Template -->
+	<script type="text/ng-template" id="/programs.html">
+		<div class="container">
+			<div class="row flexbox no-margin-bottom">
+				<div class="col s12">
+					<form class="searchform">
+						<div class="form-container"><i class="fa fa-search"></i>
+						<input name="search" placeholder="search by course, program..." class="search" type="text" ng-model="query"></div>
+					</form>
+				</div>
+			</div>
+			<div class="row flexbox">
+				<div class="col s4" ng-repeat="program in programs | filter: query">
+					<div class="card">
+						<h3>{{program.program}}</h3>
+						<h4>{{program.location}}</h4>
+						<h5><span ng-repeat="day in program.days">{{day}} </span></h5><h5><span ng-repeat="hour in program.hours">{{hour}} </span></h5>
+						<p>
+							<a href="mailto:#/{{program.contact}}">Contact</a><br>
+							<strong>Courses: </strong><span ng-repeat="class in program.classes">{{class}} </span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/ng-template" id="/programDetails.html">
+		<h1>{{ program.name }}</h1>
+		completed: <input type="checkbox" ng-model="program.completed">
+		note: <textarea>{{ program.note }}</textarea>
+	</script>
+
+
+	<script>
+		angular.module('app', ['ngRoute', 'ngResource'])
+
+		//---------------
+		// Services
+		//---------------
+
+		.factory('Programs', ['$resource', function($resource){
+			return $resource('/programs/:id', null, {
+			'update': {method: 'PUT'}
+			});
+		}])
+		//---------------
+		// Controllers
+		//---------------
+		.controller('ProgramController', ['$scope', 'Programs', function ($scope, Programs) {
+			$scope.programs = Programs.query();
+			$scope.editing = [];
+
+		}])
+
+		.controller('ProgramDetailCtrl', ['$scope', '$routeParams', 'Programs', function ($scope, $routeParams, Programs) {
+			$scope.program = Programs[$routeParams.id];
+		}])
+
+		//---------------
+		// Routes
+		//---------------
+
+		.config(['$routeProvider', function ($routeProvider) {
+			$routeProvider
+			.when('/', {
+				templateUrl: '/programs.html',
+				controller: 'ProgramController'
+			})
+
+			.when('/:id', {
+				templateUrl: '/programDetails.html',
+				controller: 'ProgramDetailCtrl'
+			 });
+		}]);
+	</script>
+	</body>
+</html>
