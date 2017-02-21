@@ -3,7 +3,8 @@ var mongoose = require('mongoose');
 // Use native Node promises
 mongoose.Promise = global.Promise;
 // connect to MongoDB
-mongoose.connect('mongodb://localhost/portal-api')
+// changed from portal-api to portalData
+mongoose.connect('mongodb://NUVentionE:19951113@ds157499.mlab.com:57499/portaldata')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
