@@ -1,1 +1,0 @@
-AcademicResources = new Mongo.Collection('academicResources');
