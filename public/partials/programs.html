@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row flexbox no-margin-bottom">
+        <div class="col s12">
+            <form class="searchform">
+                <div class="form-container"><i class="fa fa-search"></i>
+                    <input name="search" placeholder="search by course, program..." class="search" type="text" ng-model="query">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row flexbox">
+        <div class="col s4" ng-repeat="program in programs | filter: query">
+            <div class="card">
+                <h3>{{program.program}}</h3>
+                <h4>{{program.location}}</h4>
+                <h5><span ng-repeat="day in program.days">{{day}} </span></h5>
+                <h5><span ng-repeat="hour in program.hours">{{hour}} </span></h5>
+                <p>
+                    <a href="mailto:#/{{program.contact}}">Contact</a>
+                    <br>
+                    <strong>Courses: </strong><span ng-repeat="class in program.classes">{{class}} </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
