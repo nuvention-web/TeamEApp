@@ -1,1 +1,3 @@
-var app = angular.module('app', ['ngRoute', 'ngResource']);
+var app = angular.module('app', ['ngRoute', 'ngResource', 'ngMaterial']).config(function($mdThemingProvider) {
+  $mdThemingProvider.disableTheming();
+});
