@@ -1,26 +1,34 @@
 <div class="container">
-    <div class="row flexbox no-margin-bottom">
-        <div class="col s12">
-            <form class="searchform">
-                <div class="form-container"><i class="fa fa-search"></i>
-                    <input name="search" placeholder="search by course, program..." class="search" type="text" ng-model="query">
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="row flexbox">
-        <div class="col s4" ng-repeat="program in programs | filter: query">
-            <div class="card">
-                <h3>{{program.program}}</h3>
-                <h4>{{program.location}}</h4>
-                <h5><span ng-repeat="day in program.days">{{day}} </span></h5>
-                <h5><span ng-repeat="hour in program.hours">{{hour}} </span></h5>
-                <p>
-                    <a href="mailto:#/{{program.contact}}">Contact</a>
-                    <br>
+    <md-content layout="row" layout-align="center">
+        <md-input-container flex="80" md-no-float layout-padding layout-margin class="md-icon-float md-block" layout="row" layout-align="center center">
+            <md-icon flex><i class="fa fa-search"></i></md-icon>
+            <input flex name="search" placeholder="search by course, program..." type="text" ng-model="query" class="md-input">
+        </md-input-container>
+    </md-content>
+</div>
+<div>
+    <md-content layout-xs="column" layout="row" layout-wrap layout-align="center stretch">
+        <md-card flex=45 ng-repeat="program in programs | filter: query">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">{{program.program}}</span>
+                    <span class="md-subhead">{{program.location}}</span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead"><span ng-repeat="day in program.days">{{day}} </span><br>
+                    <span ng-repeat="hour in program.hours">{{hour}} </span></span>
+                </md-card-title-text>
+            </md-card-title>
+            
+            <md-card-content>
                     <strong>Courses: </strong><span ng-repeat="class in program.classes">{{class}} </span>
-                </p>
-            </div>
-        </div>
-    </div>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button href="mailto:#/{{program.contact}}">Contact</md-button>
+            </md-card-actions>
+        </md-card>
+</div>
+</md-content>
 </div>
