@@ -23,7 +23,7 @@
             </md-card-title>
             
             <md-card-content>
-                    <strong>Courses: </strong><span ng-repeat="class in program.classes">{{class}} </span>
+                    <strong>Courses: </strong><span ng-repeat="c in program.course_data | filter: c[0].catalog">{{c[0].subject}} {{c[0].catalog_num}}: {{c[0].title}}<span ng-show=" ! $last ">,</span> </span>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button href="mailto:#/{{program.contact}}">Contact</md-button>
