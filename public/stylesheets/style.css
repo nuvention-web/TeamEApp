@@ -71,3 +71,13 @@ input.search:focus, input.search:focus {
 .no-margin-bottom {
 	margin-bottom: 0 !important;
 }
+
+
+p.capitalize {
+	text-transform: lowercase !important;
+	display: inline-block;
+}
+
+p.capitalize::first-letter {
+	text-transform: uppercase !important;
+}
