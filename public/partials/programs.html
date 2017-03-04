@@ -1,5 +1,5 @@
 <div class="container">
-    <md-content layout="row" layout-align="center">
+    <md-content layout="row" layout-align="left center">
         <md-input-container flex="80" md-no-float layout-padding layout-margin class="md-icon-float md-block" layout="row" layout-align="center center">
             <md-icon flex><i class="fa fa-search"></i></md-icon>
             <input flex name="search" placeholder="search by course, program..." type="text" ng-model="query" class="md-input">
@@ -17,13 +17,13 @@
             </md-card-header>
             <md-card-title>
                 <md-card-title-text>
-                    <span class="md-subhead"><span ng-repeat="day in program.days">{{day}} </span><br>
-                    <span ng-repeat="hour in program.hours">{{hour}} </span></span>
+                    <span class="md-subhead"><span ng-repeat="time in program.times"><div><span ng-repeat="(day,hours) in time"> {{day}}<span ng-if="hours !=''">: {{hours}}</span><span ng-show=" !$last ">, </span></div></span>
+                    </span>
                 </md-card-title-text>
             </md-card-title>
             
-            <md-card-content>
-                    <strong>Courses: </strong><span ng-repeat="c in program.course_data | filter: c[0].catalog">{{c[0].subject}} {{c[0].catalog_num}}: {{c[0].title}}<span ng-show=" ! $last ">,</span> </span>
+            <md-card-content ng-if="program.course_data != []">
+                    <strong>Courses: </strong><span ng-repeat="course in program.course_data | unique: 'course_id' | orderBy: 'course_id'">{{course.subject}} {{course.catalog_num}}: {{course.title}}<span ng-show=" !$last ">, </span></span>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button href="mailto:#/{{program.contact}}">Contact</md-button>

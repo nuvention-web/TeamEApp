@@ -20,10 +20,12 @@ for program in programs:
 	courses = {}
 
 	for i in range(len(course_list)):
-		course_list[i] = str(course_list[i].upper())
-		catalog = course_list[i].split(' ')
+		course = course_list[i].upper()
+		catalog = course.split(' ')
 		if len(catalog) > 1:
 			if catalog[0] in courses.keys() and courses[catalog[0]] != None:
+				if "-" not in catalog[1]:
+					catalog[1] += ("-0")
 				courses[catalog[0]].append(catalog[1])
 			else:
 				courses[catalog[0]] = [catalog[1]]
@@ -45,6 +47,7 @@ for program in programs:
 				course_data.append(client.courses(term=t['id'],subject=sub, catalog_num=c))
 
 	course_data = filter(None, course_data)
+	course_data = [item for sublist in course_data for item in sublist]
 
 	collection.update({"_id": program["_id"]}, {"$set": {"course_data": course_data}})
 

@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var ProgramSchema = new mongoose.Schema({
 	program: String,
 	location: String,
-	days : [String],
+	times : [{String : String}],
 	hours: [String],
 	classes: [String],
 	commitment: String,
