@@ -72,12 +72,11 @@ input.search:focus, input.search:focus {
 	margin-bottom: 0 !important;
 }
 
-
-p.capitalize {
-	text-transform: lowercase !important;
-	display: inline-block;
+.nav-logo {
+	margin-left: 1em;
 }
 
-p.capitalize::first-letter {
-	text-transform: uppercase !important;
+.nav-logo img {
+	height: 48px;
+	width: auto;
 }

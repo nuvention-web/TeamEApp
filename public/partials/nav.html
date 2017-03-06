@@ -1,11 +1,15 @@
-<md-toolbar layout="row" md-whiteframe="2" layout-align="end center">
-<md-nav-bar md-selected-nav-item="currentNavItem">
-  <md-nav-item md-nav-click="goto('/')" name="resources"> Resources
-  </md-nav-item>
-  <md-nav-item md-nav-href="#/" name="tutors">Tutors</md-nav-item>
-  <md-nav-item md-nav-sref="#/" name="student_groups">Student Groups</md-nav-item>
-  <md-nav-item md-nav-sref="#" sref-opts="{reload: true, notify: true}" name="logout">
-    Logout
-  </md-nav-item>
-</md-nav-bar>
+<md-toolbar layout="row" md-whiteframe="2" layout-align="space-between center">
+    <md-nav-bar md-selected-nav-item="currentNavItem" class="nav-logo">
+        <md-nav-item md-nav-href="#/" name="logo" ><img src="images/gateway_logo.png">
+        </md-nav-item>
+    </md-nav-bar>
+    <md-nav-bar md-selected-nav-item="currentNavItem">
+        <md-nav-item md-nav-click="goto('/')" name="resources"> Resources
+        </md-nav-item>
+        <md-nav-item md-nav-href="#/" name="tutors">Tutors</md-nav-item>
+        <md-nav-item md-nav-sref="#/" name="student_groups">Student Groups</md-nav-item>
+        <md-nav-item md-nav-sref="#" sref-opts="{reload: true, notify: true}" name="logout">
+            Logout
+        </md-nav-item>
+    </md-nav-bar>
 </md-toolbar>
