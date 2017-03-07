@@ -73,10 +73,13 @@ input.search:focus, input.search:focus {
 }
 
 .nav-logo {
-	margin-left: 1em;
+	top: -.5em;
+	display: block;
+	position: relative;
 }
 
 .nav-logo img {
 	height: 48px;
+
 	width: auto;
 }
