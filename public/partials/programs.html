@@ -7,6 +7,7 @@
     </md-content>
 </div>
 <div>
+
     <md-content layout-xs="column" layout="row" layout-wrap layout-align="center stretch">
         <md-card flex=45 ng-repeat="program in programs | filter: query">
             <md-card-header>
@@ -32,3 +33,56 @@
 </div>
 </md-content>
 </div>
+
+<div class="ui special cards">
+  <div class="card">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Add Friend</div>
+          </div>
+        </div>
+      </div>
+      <img src="assets/images/elliot.jpg">
+    </div>
+    <div class="content">
+      <a class="header">Team Fu</a>
+      <div class="meta">
+        <span class="date">Create in Sep 2014</span>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="blurring dimmable image">
+      <div class="ui inverted dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui primary button">Add Friend</div>
+          </div>
+        </div>
+      </div>
+      <img src="assets/images/jenny.jpg">
+    </div>
+    <div class="content">
+      <a class="header">Team Hess</a>
+      <div class="meta">
+        <span class="date">Create in Aug 2014</span>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="assets/main.js"></script>
