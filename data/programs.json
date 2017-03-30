@@ -1,12 +1,14 @@
-app.controller('ProgramController', ['$scope', 'Programs', function($scope, Programs) {
-    $scope.programs = [{
+[{
 	"program": "Calculus, Chemistry, and Physics Undergraduate Tutoring Room",
 	"location": "Tech HG04",
-	"times": [
-		{"Monday":"8-10PM"},
-		{"Tuesday":"8-10PM"},
-		{"Wednesday":"6-8PM"},
-		{"Thursday":"8-10PM"}
+	"days": [
+		"Sunday",
+		"Monday",
+		"Tuesday",
+		"Wednesday"
+	],
+	"hours": [
+		"8:00PM-10:00PM"
 	],
 	"classes": [
 		"Math 212",
@@ -36,11 +38,15 @@ app.controller('ProgramController', ['$scope', 'Programs', function($scope, Prog
 }, {
 	"program": "Tech Tutoring,",
 	"location": "MG28",
-	"times": [
-		{"Monday":"8-10PM"},
-		{"Tuesday":"8-10PM"},
-		{"Wednesday":"6-8PM"},
-		{"Thursday":"8-10PM"}
+	"days": [
+		"Monday",
+		"Tuesday",
+		"Wednesday",
+		"Thursday"
+	],
+	"hours": [
+		"2:00PM-5:00PM",
+		"7:00PM-10:00PM"
 	],
 	"classes": [
 		"Math",
@@ -56,12 +62,8 @@ app.controller('ProgramController', ['$scope', 'Programs', function($scope, Prog
 }, {
 	"program": "Academic Mentoring Program (AMP)",
 	"location": "",
-	"times": [
-		{"Monday":"8-10PM"},
-		{"Tuesday":"8-10PM"},
-		{"Wednesday":"6-8PM"},
-		{"Thursday":"8-10PM"}
-	],
+	"days": "",
+	"hours": "",
 	"classes": [
 		"Bio 215",
 		"Bio 217",
@@ -118,17 +120,17 @@ app.controller('ProgramController', ['$scope', 'Programs', function($scope, Prog
 }, {
 	"program": "Math Place",
 	"location": "Room 232, Schaffner Library, Wieboldt Hall",
-	"times": [
-		{"Monday":"8-10PM"},
-		{"Tuesday":"8-10PM"},
-		{"Wednesday":"6-8PM"},
-		{"Thursday":"8-10PM"}
+	"days": [
+		"Monday",
+		"Tuesday",
+		"Wednesday",
+		"Thursday",
+		"Saturday",
+		"Sunday"
 	],
+	"hours": "",
 	"classes": "",
 	"contact": "scsmathplace@northwestern.edu",
 	"commitment": "Appointment",
 	"link": "http://www.library.northwestern.edu/libraries-collections/schaffner-library/math-place.html"
-}];//Programs.query();
-    $scope.editing = [];
-
-}]);
+}]

@@ -1,0 +1,103 @@
+<div class="ui container">
+    <div class="ui one column centered grid">
+        <div class="column">
+            <div class="ui action left icon input">
+                <i class="search icon"></i>
+                <input name="search" placeholder="Search..." type="text" ng-model="query">
+                <div class="ui blue button">Search</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui container">
+    <div class="ui three column grid">
+        <div class="column" ng-repeat="program in programs | filter: query">
+            <div class="ui special cards">
+                <div class="card">
+                    <div class="blurring dimmable image">
+                        <div class="ui inverted dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <div class="ui secondary button">Book Appointment</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="assets/images/wireframe/image-square.png">
+                    </div>
+                    <div class="content">
+                        <a class="header">{{program.program}}</a>
+                        <div class="meta">
+                            <span class="group">{{program.location}}</span>
+                        </div>
+                        <div class="description"><span ng-repeat="time in program.times"><div><span ng-repeat="(day,hours) in time"> {{day}}<span ng-if="hours !=''">: {{hours}}</span><span ng-show=" !$last ">, </span></div>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <a>
+                        <i class="users icon"></i> 2 Members
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="ui container">
+    <div class="ui three column grid">
+        <div class="column">
+            <div class="ui special cards">
+                <div class="card">
+                    <div class="blurring dimmable image">
+                        <div class="ui inverted dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <div class="ui secondary button">Add Friend</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="assets/images/wireframe/image-square.png">
+                    </div>
+                    <div class="content">
+                        <a class="header">Team Fu</a>
+                        <div class="meta">
+                            <span class="date">Create in Sep 2014</span>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <a>
+                            <i class="users icon"></i> 2 Members
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui special cards">
+                <div class="card">
+                    <div class="blurring dimmable image">
+                        <div class="ui inverted dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <div class="ui secondary button">Add Friend</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="assets/images/wireframe/image-square.png">
+                    </div>
+                    <div class="content">
+                        <a class="header">Team Hess</a>
+                        <div class="meta">
+                            <span class="date">Create in Aug 2014</span>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <a>
+                            <i class="users icon"></i> 2 Members
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/main.js"></script>
