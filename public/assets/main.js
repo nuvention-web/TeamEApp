@@ -20,6 +20,8 @@ $(document).ready(function() {
         on: 'hover'
     });
 
+    $('.shape').shape({'width':'next', 'height':'next'});
+
     $('.ui.menu .ui.dropdown').dropdown({
                 on: 'hover'
             });

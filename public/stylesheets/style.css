@@ -132,3 +132,7 @@ input.search:focus, input.search:focus {
 	text-align: center !important;
 
 }
+
+.button.secondary .fa {
+	color: white;
+}

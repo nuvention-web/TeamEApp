@@ -1,36 +1,47 @@
-<div class="container">
-    <md-content layout="row" layout-align="left center">
-        <md-input-container flex="80" md-no-float layout-padding layout-margin class="md-icon-float md-block" layout="row" layout-align="center center">
-            <md-icon flex><i class="fa fa-search"></i></md-icon>
-            <input flex name="search" placeholder="search by course, program..." type="text" ng-model="query" class="md-input">
-        </md-input-container>
-    </md-content>
+<div class="ui container">
+    <div class="ui one column centered grid">
+        <div class="column">
+            <div class="ui action left icon input">
+                <i class="search icon"></i>
+                <input name="search" placeholder="Search..." type="text" ng-model="query">
+                <div class="ui blue button">Search</div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-
-    <md-content layout-xs="column" layout="row" layout-wrap layout-align="center stretch">
-        <md-card flex=45 ng-repeat="program in programs | filter: query">
-            <md-card-header>
-                <md-card-header-text>
-                    <span class="md-title">{{program.program}}</span>
-                    <span class="md-subhead">{{program.location}}</span>
-                </md-card-header-text>
-            </md-card-header>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-subhead"><span ng-repeat="time in program.times"><div><span ng-repeat="(day,hours) in time"> {{day}}<span ng-if="hours !=''">: {{hours}}</span><span ng-show=" !$last ">, </span></div></span>
+<div class="ui container">
+    <div class="ui special three cards">
+        <div class="card" ng-repeat="program in programs | filter: query" emit-last-repeater-element>
+            <div class="blurring dimmable image">
+                <div class="ui dimmer">
+                    <div class="content">
+                        <!-- <div class="ui mini list" ng-if="program.course_data != []">
+                            <div class="item" ng-repeat="course in program.course_data | unique: 'course_id' | orderBy: 'course_id'">{{course.subject}} {{course.catalog_num}}: {{course.title}}
+                            </div>
+                        </div> -->
+                        <div class="center">
+            <div class="ui secondary button">See Classes <i class="fa fa-caret-right"></i></div>
+          </div>
+                    </div>
+                </div>
+                <img src="assets/images/wireframe/image-square.png">
+            </div>
+            <div class="content">
+                <a class="header">{{program.program}}</a>
+                <div class="meta">
+                    <span class="group">{{program.location}}</span>
+                </div>
+                <div class="description">
+                    <span ng-repeat="time in program.times">
+						<div>
+							<span ng-repeat="(day,hours) in time"> {{day}}
+								<span ng-if="hours !=''">: {{hours}}</span>
+                    <span ng-show=" !$last ">, </span>
                     </span>
-                </md-card-title-text>
-            </md-card-title>
-            
-            <md-card-content ng-if="program.course_data != []">
-                    <strong>Courses: </strong><span ng-repeat="course in program.course_data | unique: 'course_id' | orderBy: 'course_id'">{{course.subject}} {{course.catalog_num}}: {{course.title}}<span ng-show=" !$last ">, </span></span>
-            </md-card-content>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button href="mailto:#/{{program.contact}}">Contact</md-button>
-            </md-card-actions>
-        </md-card>
+                </div>
+                </span>
+            </div>
+        </div>
+    </div>
 </div>
-</md-content>
-</div>
-
+<script src="assets/main.js"></script>

@@ -1,12 +1,15 @@
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'partials/semantic.html',
-            controller: 'ProgramController'
+            templateUrl: '/partials/semantic.html',
+            controller: 'ProgramCtrl'
         })
-
-    .when('/:id', {
-        templateUrl: '/programDetails.html',
-        controller: 'ProgramDetailCtrl'
-    });
+        .when('/profile', {
+            templateUrl: '/partials/profile.html',
+            controller: 'ProfileCtrl'
+        })
+        .when('/:id', {
+            templateUrl: '/partials/programDetails.html',
+            controller: 'ProgramDetailCtrl'
+        });
 }]);
