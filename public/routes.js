@@ -8,6 +8,14 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: '/partials/profile.html',
             controller: 'ProfileCtrl'
         })
+        .when('/appointments', {
+            templateUrl: '/partials/appointments.html',
+            controller: 'AppointmentsCtrl'
+        })
+        .when('/login', {
+            templateUrl: '/partials/login.html',
+            // controller: 'LoginCtrl'
+        })
         .when('/:id', {
             templateUrl: '/partials/programDetails.html',
             controller: 'ProgramDetailCtrl'
