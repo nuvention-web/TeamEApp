@@ -33,6 +33,6 @@ $(document).ready(function() {
                 .removeClass('active');
         });
 
-    
+    $('.ui.checkbox').checkbox();
 
 });
