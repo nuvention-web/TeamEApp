@@ -1,54 +1,33 @@
-<!DOCTYPE html>
-<html ng-app="app">
-
-<head>
-    <title>Login</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <!-- <link rel='stylesheet' href='/stylesheets/grid.css' /> -->
-    <link rel='stylesheet' href='/stylesheets/font-awesome.css' />
-    <!-- <link rel='stylesheet' href="/node_modules/angular-material/angular-material.css"></script> -->
-    <link rel="stylesheet" type="text/css" href="dist/semantic.css">
-    <style type="text/css">
-    body > .grid {
-        height: 100%;
-    }
-    </style>
-    <!-- <script src="assets/library/jquery.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="dist/components/visibility.js"></script>
-    <script src="dist/components/sidebar.js"></script>
-    <script src="dist/semantic.js"></script>
-    <script src="assets/main.js"></script>
-</head>
-
-<body>
+<% include partials/head %>
     <div class="ui middle aligned centered grid">
         <div class="ten wide column">
-            <h2 class="ui center aligned">Sign Up</h2>
+            <h2 class="ui center aligned">Sign Up</h2><% if (message != null) { %>
+          <div class="alert-danger"><%= message %></div>
+        <% } %>
             <div class="ui raised segment">
-                <form class="ui form">
+                <form class="ui form" action="/signup" method="post">
                     <div class="field">
                         <label>Name</label>
                         <div class="inline fields">
                             <div class="eight wide field">
-                                <input type="text" name="firstname" placeholder="First Name" ng-model="user.firstname">
+                                <input type="text" name="firstname" placeholder="First Name">
                             </div>
                             <div class="eight wide field">
-                                <input type="text" name="lastname" placeholder="Last Name" ng-model="user.lastname">
+                                <input type="text" name="lastname" placeholder="Last Name">
                             </div>
                         </div>
                     </div>
                     <div class="field">
                         <label>Email</label>
-                        <input type="text" name="email" placeholder="Email"  ng-model="user.email">
+                        <input type="text" name="email" placeholder="Email">
                     </div>
                     <div class="field">
                         <label>Username</label>
-                        <input type="text" name="username" placeholder="username" ng-model="user.username">
+                        <input type="text" name="username" placeholder="username">
                     </div>
                     <div class="field">
                         <label>Password</label>
-                        <input type="password" name="password" placeholder="password" ng-model="user.password">
+                        <input type="password" name="password" placeholder="password">
                     </div>
                     <div class="ui hidden divider"></div>
                     <div class="required inline field">
@@ -58,36 +37,14 @@
                         </div>
                     </div>
                     <div class="ui hidden divider"></div>
-                    <button class="ui button centered" type="submit" ng-click="signup(user)">Submit</button>
+                    <button class="ui button centered" type="submit" value="Submit">Submit</button>
                 </form>
             </div>
             <div class="ui message center aligned">
-                Already have an account? <a href="#/login">Log In</a>
+                Already have an account? <a href="/login">Log In</a>
             </div>
         </div>
     </div>
     <script src="assets/main.js"></script>
-    <!-- Libraries -->
-    <!-- Angular Material Dependencies -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
-    <!-- Angular Material Javascript now available via Google CDN; version 0.9.4 used here -->
-    <!-- <script src="/node_modules/angular-material/angular-material.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.min.js"></script>
-    <script type="text/javascript" src="/app.js"></script>
-    <script type="text/javascript" src="/components.js"></script>
-    <script type="text/javascript" src="/routes.js"></script>
-    <!-- Controllers -->
-    <script type="text/javascript" src="/controllers/ProgramController.js"></script>
-    <script type="text/javascript" src="/controllers/ProgramDetailController.js"></script>
-    <script type="text/javascript" src="/controllers/ProfileController.js"></script>
-    <!-- Services -->
-    <script type="text/javascript" src="/services/programs.js"></script>
-    <!-- Directives -->
-    <script type="text/javascript" src="/directives/emitLastRepeaterElement.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
-</body>
-
-</html>
+ 
+ <% include partials/scripts %>

@@ -1,5 +1,6 @@
 app.controller('ProgramCtrl', ['$scope', 'Programs', function($scope, Programs) {
     $scope.programs = Programs.query();
+    
     $scope.editing = [];
 
     $scope.$on('LastRepeaterElement', function() {
