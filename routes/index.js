@@ -2,11 +2,10 @@
 
 var express = require('express');
 var passport = require('passport');
-
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Academic Resource Portal' });
+  res.render('login.ejs', { title: 'Login', message: req.flash('loginMessage')  });
 });
 
 router.get('/login', function(req, res, next) {
@@ -19,10 +18,6 @@ router.get('/signup', function(req, res) {
 
 router.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile.ejs', { title:'Profile', user: req.user });
-});
-
-router.get('/programs', isLoggedIn, function(req, res, next) {
-  res.redirect('/')
 });
 
 router.get('/logout', function(req, res) {
