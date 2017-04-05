@@ -20,6 +20,10 @@ router.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile.ejs', { title:'Profile', user: req.user });
 });
 
+router.get('/programs', isLoggedIn, function(req, res) {
+  res.render('index.ejs', { title:'Programs', user: req.programs });
+});
+
 router.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
