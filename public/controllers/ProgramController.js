@@ -12,4 +12,18 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', function($scope, Programs) 
             $(this).closest('.shape').shape('flip over');
         });
     });
+
+    $scope.search = "";
+    $scope.userInput = "";
+
+    $scope.count=0;
+    $scope.applySearch = function() {
+        $scope.search = $scope.userInput;
+    };
+
+    $scope.clearing = function() {
+        $scope.userInput = "";
+        $scope.search = "";
+    };
+
 }]);
