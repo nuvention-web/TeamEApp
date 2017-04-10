@@ -3,15 +3,16 @@
         <div class="column">
             <div class="ui action left icon input">
                 <i class="search icon"></i>
-                <input name="search" placeholder="Search..." type="text" ng-model="query">
-                <div class="ui blue button">Search</div>
-            </div>
+                <input name="search" id="search_id" placeholder="Search..." type="text" ng-model="userInput" ng-keydown="applySearchEnter($event)">
+                <div class="ui blue button" ng-click="applySearch()">Search</div>
+                <br><div class="ui blue button" ng-click="clearing()">View All</div>
+                </div>
         </div>
     </div>
 </div>
 <div class="ui container">
     <div class="ui three column grid">
-        <div class="ui shape column" ng-repeat="program in programs | filter: query" emit-last-repeater-element>
+        <div class="ui shape column" ng-repeat="program in programs | filter: search" emit-last-repeater-element>
             <div class="ui sides">
                 <div class="active side">
                     <div class="ui special cards">
@@ -78,3 +79,8 @@
     </div>
 </div>
 <script src="assets/main.js"></script>
+<script>
+function Copycat() {
+document.getElementById("search2_id").value=document.getElementById("search_id").value;
+}
+</script>
