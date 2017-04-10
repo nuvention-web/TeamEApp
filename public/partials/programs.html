@@ -3,9 +3,9 @@
         <div class="column">
             <div class="ui action left icon input">
                 <i class="search icon"></i>
-                <input name="search" id="search_id" placeholder="Search..." type="text" ng-model="userInput">
+                <input name="search" id="search_id" placeholder="Search..." type="text" ng-model="userInput" ng-keydown="applySearchEnter($event)">
                 <div class="ui blue button" ng-click="applySearch()">Search</div>
-                <div class="ui blue button" ng-click="clearing()">View All</div>
+                <br><div class="ui blue button" ng-click="clearing()">View All</div>
                 </div>
         </div>
     </div>

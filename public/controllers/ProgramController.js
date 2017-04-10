@@ -21,6 +21,12 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', function($scope, Programs) 
         $scope.search = $scope.userInput;
     };
 
+    $scope.applySearchEnter = function(e) {
+        if(e.keyCode === 13){
+            $scope.search = $scope.userInput;
+        }
+    };
+
     $scope.clearing = function() {
         $scope.userInput = "";
         $scope.search = "";
