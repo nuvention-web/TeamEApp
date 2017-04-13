@@ -10,7 +10,7 @@ var CurrentUser = require('../models/CurrentUser.js');
 
 /* GET /currentUser listing. */
 router.get('/', isLoggedIn, function(req, res, next) {
-  Program.find(function (err, currentUser) {
+  CurrentUser.find(function (err, currentUser) {
     if (err) return next(err);
     res.json(req.user);
   });
