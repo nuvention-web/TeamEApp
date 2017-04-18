@@ -13,7 +13,7 @@ router.get('/login', function(req, res, next) {
 });
 
 router.get('/signup', function(req, res) {
-  res.render('index', { title:'Signup', message: req.flash('loginMessage')});
+  res.render('signup', { title:'Signup', message: req.flash('loginMessage')});
 });
 
 router.get('/profile', isLoggedIn, function(req, res) {
@@ -30,14 +30,14 @@ router.get('/logout', function(req, res) {
 });
 
 router.post('/signup', passport.authenticate('local-signup', {
-  successRedirect: '/profile#/profile',
-  failureRedirect: '/signup#/signup',
+  successRedirect: '/profile',
+  failureRedirect: '/signup',
   failureFlash: true,
 }));
 
 router.post('/login', passport.authenticate('local-login', {
   successRedirect: '/profile#/profile',
-  failureRedirect: '/login#/login',
+  failureRedirect: '/login',
   failureFlash: true,
 }));
 
