@@ -57,7 +57,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function($ro
 		})
 		.when('/signup', {
 			templateUrl: '/partials/signup.html',
-			controller: 'SignupCtrl'
+			// controller: 'SignupCtrl'
 		})
 		.when('/profile', {
 			templateUrl: '/partials/profile.html',

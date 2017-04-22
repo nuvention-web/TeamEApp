@@ -55,6 +55,13 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+var auth = function(req, res, next){
+  if (!req.isAuthenticated()) 
+    res.send(401);
+  else
+    next();
+};
+
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);

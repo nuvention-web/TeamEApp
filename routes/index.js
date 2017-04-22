@@ -34,7 +34,7 @@ router.get('/programs', function(req, res){
   res.redirect('/#/programs');
 });
 
-router.post('/#/signup', passport.authenticate('local-signup'));
+// router.post('/#/signup', passport.authenticate('local-signup'), function());
 
 // router.get('/login', function(req, res, next) {
 //   res.render('login', { title:'Login', message: req.flash('loginMessage') });
@@ -57,11 +57,9 @@ router.post('/#/signup', passport.authenticate('local-signup'));
 //   res.redirect('/');
 // });
 
-// router.post('/signup', passport.authenticate('local-signup', {
-//   successRedirect: '/profile',
-//   failureRedirect: '/signup',
-//   failureFlash: true,
-// }));
+router.post('/signup', passport.authenticate('local-signup'), function(req, res) {
+  res.render('index');
+});
 
 router.post('/login', passport.authenticate('local-login'), function(req, res){
     res.redirect('/#/programs');
