@@ -19,6 +19,7 @@ var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var programs = require('./routes/programs');
+var currentUser = require('./routes/currentUser');
 
 var configDB = require('./config/database.js');
 mongoose.Promise = global.Promise;
@@ -44,6 +45,7 @@ app.use(flash());
 require('./config/passport')(passport);
 
 app.use('/', routes);
+app.use('/api/currentUser', currentUser);
 app.use('/api/users', users);
 app.use('/api/programs', programs);
 
