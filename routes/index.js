@@ -34,25 +34,6 @@ router.get('/programs', function(req, res){
   res.redirect('/#/programs');
 });
 
-// router.post('/#/signup', passport.authenticate('local-signup'), function());
-
-// router.get('/login', function(req, res, next) {
-//   res.render('login', { title:'Login', message: req.flash('loginMessage') });
-// });
-
-// router.get('/signup', function(req, res) {
-//   res.render('signup', { title:'Signup', message: req.flash('loginMessage')});
-// });
-
-// router.get('/profile', isLoggedIn, function(req, res) {
-//   res.render('profile', { title:'Profile', user: req.user });
-// });
-
-// router.get('/programs', isLoggedIn, function(req, res) {
-//   res.render('index', { title:'Programs', user: req.programs });
-// });
-
-
 router.post('/signup', passport.authenticate('local-signup', {
   successRedirect: '/profile',
   failureRedirect: '/signup'
@@ -67,24 +48,5 @@ router.post('/login', passport.authenticate('local-login', {
 }));
 
 
-// router.post('/login', passport.authenticate('local-login'), function(req, res){
-//     res.redirect('/#/programs');
-// });
-
 module.exports = router;
 
-// function isLoggedIn(req, res, next) {
-//   if (req.isAuthenticated())
-//       return next();
-//   res.redirect('/');
-// }
-
-// var express = require('express');
-// var router = express.Router();
-
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Academic Resource Portal' });
-// });
-
-// module.exports = router;
