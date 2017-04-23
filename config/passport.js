@@ -37,6 +37,7 @@ module.exports = function(passport) {
 						console.log(req);
 						return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
 					} else {
+						console.log('hello');
 						var newUser = new User();
 						newUser.local.email = email;
 						newUser.local.firstname = firstname;
@@ -47,9 +48,11 @@ module.exports = function(passport) {
 						newUser.local.birthday = birthday;
 						newUser.local.school = school;
 						newUser.local.major = major;
+						console.log('bye');
 						newUser.save(function(err) {
 							if (err)
 								throw err;
+							console.log('made it');
 							return done(null, newUser);
 						});
 					}

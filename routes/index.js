@@ -4,10 +4,6 @@ var express = require('express');
 var passport = require('passport');
 var router = express.Router();
 
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Login', message: req.flash('loginMessage')  });
-// });
-
 router.get('/', function(req, res){
   res.render('index', { title: 'Index' });
 });
@@ -24,6 +20,10 @@ router.get('/logout', function(req, res){
 
 router.get('/signup', function(req, res){
   res.redirect('/#/signup');
+});
+
+router.get('/login', function(req, res){
+  res.redirect('/#/login');
 });
 
 router.get('/profile', function(req, res){
@@ -52,18 +52,24 @@ router.get('/programs', function(req, res){
 //   res.render('index', { title:'Programs', user: req.programs });
 // });
 
-// router.get('/logout', function(req, res) {
-//   req.logout();
-//   res.redirect('/');
+
+router.post('/signup', passport.authenticate('local-signup', {
+  successRedirect: '/profile',
+  failureRedirect: '/signup'
+  })
+);
+
+
+router.post('/login', passport.authenticate('local-login', {
+  successRedirect: '/profile',
+  failureRedirect: '/login',
+  failureFlash: true,
+}));
+
+
+// router.post('/login', passport.authenticate('local-login'), function(req, res){
+//     res.redirect('/#/programs');
 // });
-
-router.post('/signup', passport.authenticate('local-signup'), function(req, res) {
-  res.render('index');
-});
-
-router.post('/login', passport.authenticate('local-login'), function(req, res){
-    res.redirect('/#/programs');
-});
 
 module.exports = router;
 
