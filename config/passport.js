@@ -28,6 +28,7 @@ module.exports = function(passport) {
 			var birthday = req.body.birthday;
 			var school = req.body.school;
 			var major = req.body.major;
+			var gender = req.body.gender;
 
 			process.nextTick(function() {
 				User.findOne({ 'local.email': email }, function(err, user) {
@@ -48,6 +49,7 @@ module.exports = function(passport) {
 						newUser.local.birthday = birthday;
 						newUser.local.school = school;
 						newUser.local.major = major;
+						newUser.local.gender= gender;
 						console.log('bye');
 						newUser.save(function(err) {
 							if (err)

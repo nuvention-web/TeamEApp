@@ -9,9 +9,10 @@ var currentUserSchema = new mongoose.Schema({
     username: String,
     password: String,
     graduation: Number,
-    birthday: Date,
+    birthday: String,
     school: String,
-    major: String
+    major: String,
+    gender: String
   },
 });
 

@@ -13,7 +13,8 @@ var userSchema = new mongoose.Schema({
     graduation: Number,
     birthday: String,
     school: String,
-    major: String
+    major: String,
+    gender: String
   },
 });
 

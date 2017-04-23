@@ -1,93 +1,263 @@
+<script type="text/javascript">
+$('.ui.form').form({
+    fields: {
+        firstname: {
+            identifier: 'firstname',
+            rules: [{
+                type: 'empty',
+                prompt: 'Please enter your first name.'
+            }]
+        },
+        lastname: {
+            identifier: 'lastname',
+            rules: [{
+                type: 'empty',
+                prompt: 'Please enter your last name.'
+            }]
+        },
+        email: {
+            identifier: 'email',
+            rules: [{
+                type: 'email',
+                prompt: 'Please enter a valid email address.'
+            }]
+        },
+        gender: {
+            identifier: 'gender',
+            rules: [{
+                type: 'empty',
+                prompt: 'Please select a valid option.'
+            }]
+        },
+        username: {
+            identifier: 'username',
+            rules: [{
+                type: 'empty',
+                prompt: 'Please enter a valid username.'
+            }]
+        },
+        password: {
+            identifier: 'password',
+            rules: [{
+                type: 'empty',
+                prompt: 'Please enter a password'
+            }, {
+                type: 'minLength[6]',
+                prompt: 'Your password must be at least {ruleValue} characters'
+            }]
+        },
+        graduation: {
+            identifier: 'graduation',
+            rules: [{
+                type: 'exactLength[4]',
+                prompt: 'Please enter a valid graduation year (ex. 2020).'
+            }]
+        },
+        birthday: {
+            identifier: 'birthday',
+            rules: [{
+                type: 'empty',
+                prompt: 'Please enter a valid date of birth.'
+            }]
+        },
+        school: {
+            identifier: 'school',
+            rules: [{
+                type: 'empty',
+                prompt: 'Please select your home school.'
+            }]
+        },
+        major: {
+            identifier: 'major',
+            rules: [{
+                type: 'empty',
+                prompt: 'Please enter your major.'
+            }]
+        },
+        terms: {
+            identifier: 'terms',
+            rules: [{
+                type: 'checked',
+                prompt: 'You must agree to the terms and conditions'
+            }]
+        }
+    }
+});
+</script>
 <div class="ui middle aligned centered grid">
-        <div class="ten wide column">
-            <h2 class="ui center aligned">Sign Up</h2>
-            
-                    <div class="ui raised segment">
-                        <form class="ui form" action="/signup" method="post">
-                            <div class="field required">
-                                <label>Name</label>
-                                <div class="inline fields">
-                                    <div class="eight wide field">
-                                        <input type="text" name="firstname" placeholder="First Name">
-                                    </div>
-                                    <div class="eight wide field">
-                                        <input type="text" name="lastname" placeholder="Last Name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="required field">
-                                <label>Email</label>
-                                <input type="text" name="email" placeholder="Email">
-                            </div>
-                            <div class="required field">
-                                <label>Username</label>
-                                <input type="text" name="username" placeholder="username">
-                            </div>
-                            <div class="required field">
-                                <label>Password</label>
-                                <input type="password" name="password" placeholder="password">
-                            </div>
-                            <div class="equal width fields">
-                                <div class="field required">
-                                    <label>Graduation Year</label>
-                                    <input type="number" name="graduation" placeholder="ex: 2020">
-                                </div>
-                                <div class="field required">
-                                    <label>Birth Date</label>
-                                    <input type="date" name="birthday" placeholder="mm/dd/yyyy">
-                                </div>
-                                <div class="field required">
-                                    <label>Major</label>
-                                    <input type="text" name="birthday" placeholder="major">
-                                </div>
-                            </div>
-                            <div class="grouped fields required">
-                                <label for="school">School</label>
-                                <div class="field">
-                                    <div class="ui radio checkbox">
-                                        <input type="radio" name="school" checked="" tabindex="0" class="hidden">
-                                        <label>Weinberg</label>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="ui radio checkbox">
-                                        <input type="radio" name="school" checked="" tabindex="0" class="hidden">
-                                        <label>McCormick</label>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="ui radio checkbox">
-                                        <input type="radio" name="school" checked="" tabindex="0" class="hidden">
-                                        <label>SESP</label>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="ui radio checkbox">
-                                        <input type="radio" name="school" checked="" tabindex="0" class="hidden">
-                                        <label>School of Communications</label>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="ui radio checkbox">
-                                        <input type="radio" name="school" checked="" tabindex="0" class="hidden">
-                                        <label>Medill</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ui hidden divider"></div>
-                            <div class="required inline field">
-                                <div class="ui checkbox">
-                                    <input type="checkbox" tabindex="0" class="hidden">
-                                    <label>I agree to the terms and conditions</label>
-                                </div>
-                            </div>
-                            <div class="ui hidden divider"></div>
-                            <button class="ui button centered" type="submit" value="Submit">Submit</button>
-                        </form>
+    <div class="ten wide column">
+        <h2 class="ui center aligned">Sign Up</h2>
+        <div class="ui raised segment">
+            <form class="ui form" action="/signup" method="post">
+                <div class="two fields">
+                    <div class="field required">
+                        <label for="firstname">First Name</label>
+                        <input type="text" name="firstname" placeholder="First Name">
                     </div>
-                    <div class="ui message center aligned">
-                        Already have an account? <a href="/login">Log In</a>
+                    <div class="field required">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" name="lastname" placeholder="Last Name">
                     </div>
+                </div>
+                <div class="required field">
+                    <label>Email</label>
+                    <input type="text" name="email" placeholder="Email">
+                </div>
+                <div class="required field">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="username">
+                </div>
+                <div class="required field">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="password">
+                </div>
+                <div class="equal width fields">
+                    <div class="field required">
+                        <label>Graduation Year</label>
+                        <input type="number" name="graduation" placeholder="ex: 2020">
+                    </div>
+                    <div class="field required">
+                        <label>Birth Date</label>
+                        <input type="date" name="birthday" placeholder="mm/dd/yyyy">
+                    </div>
+                    <div class="field required">
+                        <label for="gender">Gender</label>
+                        <div class="ui fluid search selection dropdown">
+                            <input type="hidden" name="gender">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Gender</div>
+                            <div class="menu">
+                                <div class="item" value="Male">Male</div>
+                                <div class="item" value="Female">Female</div>
+                                <div class="item" value="Other">Other</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="equal width fields">
+                    <div class="field required">
+                        <label>Major</label>
+                        <!-- <input type="text" name="major" placeholder="Major"> -->
+                        <div class="ui fluid search selection dropdown">
+                            <input type="hidden" name="major">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Major</div>
+                            <div class="menu">
+                                <div class="item" value="African American Studies">African American Studies</div>
+                                <div class="item" value="American Studies">American Studies</div>
+                                <div class="item" value="Anthropology">Anthropology</div>
+                                <div class="item" value="Applied Mathematics">Applied Mathematics</div>
+                                <div class="item" value="Art History">Art History</div>
+                                <div class="item" value="Art Theory and Practice">Art Theory and Practice</div>
+                                <div class="item" value="Asian American Studies">Asian American Studies</div>
+                                <div class="item" value="Asian Languages and Cultures">Asian Languages and Cultures</div>
+                                <div class="item" value="Asian Studies">Asian Studies</div>
+                                <div class="item" value="Biological Sciences">Biological Sciences</div>
+                                <div class="item" value="Biomedical Engineering">Biomedical Engineering</div>
+                                <div class="item" value="Chemical Engineering">Chemical Engineering</div>
+                                <div class="item" value="Chemistry">Chemistry</div>
+                                <div class="item" value="Civil Engineering">Civil Engineering</div>
+                                <div class="item" value="Classics">Classics</div>
+                                <div class="item" value="Cognitive Science">Cognitive Science</div>
+                                <div class="item" value="Combined Engineering and Communication Program">Combined Engineering and Communication Program</div>
+                                <div class="item" value="Combined Music & Engineering Program">Combined Music & Engineering Program</div>
+                                <div class="item" value="Communication Studies">Communication Studies</div>
+                                <div class="item" value="Comparative Literary Studies">Comparative Literary Studies</div>
+                                <div class="item" value="Computer Engineering">Computer Engineering</div>
+                                <div class="item" value="Computer Science (BS)">Computer Science (BS)</div>
+                                <div class="item" value="Computer Science BA-CS">Computer Science BA-CS</div>
+                                <div class="item" value="Dance">Dance</div>
+                                <div class="item" value="Earth and Planetary Sciences">Earth and Planetary Sciences</div>
+                                <div class="item" value="Economics">Economics</div>
+                                <div class="item" value="Electrical Engineering">Electrical Engineering</div>
+                                <div class="item" value="English: Creative Writing">English: Creative Writing</div>
+                                <div class="item" value="English: Literature">English: Literature</div>
+                                <div class="item" value="Environmental Engineering">Environmental Engineering</div>
+                                <div class="item" value="Environmental Sciences">Environmental Sciences</div>
+                                <div class="item" value="French">French</div>
+                                <div class="item" value="Gender and Sexuality Studies">Gender and Sexuality Studies</div>
+                                <div class="item" value="German">German</div>
+                                <div class="item" value="History">History</div>
+                                <div class="item" value="Honors Program in Medical Education (HPME)">Honors Program in Medical Education (HPME)</div>
+                                <div class="item" value="Human Communication Sciences">Human Communication Sciences</div>
+                                <div class="item" value="Human Development and Psychological Services">Human Development and Psychological Services</div>
+                                <div class="item" value="Industrial Engineering">Industrial Engineering</div>
+                                <div class="item" value="Integrated Engineering Studies (MIES)">Integrated Engineering Studies (MIES)</div>
+                                <div class="item" value="Integrated Science Program">Integrated Science Program</div>
+                                <div class="item" value="Italian">Italian</div>
+                                <div class="item" value="Jewish Studies">Jewish Studies</div>
+                                <div class="item" value="Journalism">Journalism</div>
+                                <div class="item" value="Latina and Latino Studies">Latina and Latino Studies</div>
+                                <div class="item" value="Learning and Organizational Change">Learning and Organizational Change</div>
+                                <div class="item" value="Linguistics">Linguistics</div>
+                                <div class="item" value="Manufacturing & Design Engineering (BS-MaDE)">Manufacturing & Design Engineering (BS-MaDE)</div>
+                                <div class="item" value="Materials Science and Engineering (BA)">Materials Science and Engineering (BA)</div>
+                                <div class="item" value="Materials Science and Engineering (BS)">Materials Science and Engineering (BS)</div>
+                                <div class="item" value="Mathematical Methods in the Social Sciences">Mathematical Methods in the Social Sciences</div>
+                                <div class="item" value="Mathematics">Mathematics</div>
+                                <div class="item" value="Mechanical Engineering">Mechanical Engineering</div>
+                                <div class="item" value="Middle East North African Studies">Middle East North African Studies</div>
+                                <div class="item" value="Music Performance: Brass">Music Performance: Brass</div>
+                                <div class="item" value="Music Performance: Percussion">Music Performance: Percussion</div>
+                                <div class="item" value="Music Performance: Piano">Music Performance: Piano</div>
+                                <div class="item" value="Music Performance: Strings">Music Performance: Strings</div>
+                                <div class="item" value="Music Performance: Voice & Opera">Music Performance: Voice & Opera</div>
+                                <div class="item" value="Music Performance: Woodwinds">Music Performance: Woodwinds</div>
+                                <div class="item" value="Music Studies: Composition and Music Technology">Music Studies: Composition and Music Technology</div>
+                                <div class="item" value="Music Studies: Music Education">Music Studies: Music Education</div>
+                                <div class="item" value="Music Studies: Musicology">Music Studies: Musicology</div>
+                                <div class="item" value="Music Studies: Music Theory and Cognition">Music Studies: Music Theory and Cognition</div>
+                                <div class="item" value="Neuroscience">Neuroscience</div>
+                                <div class="item" value="Northwestern Undergraduate Premedical Scholars Program (NUPSP)">Northwestern Undergraduate Premedical Scholars Program (NUPSP)</div>
+                                <div class="item" value="Performance Studies">Performance Studies</div>
+                                <div class="item" value="Philosophy">Philosophy</div>
+                                <div class="item" value="Physics and Astronomy">Physics and Astronomy</div>
+                                <div class="item" value="Political Science">Political Science</div>
+                                <div class="item" value="Psychology">Psychology</div>
+                                <div class="item" value="Radio/Television/ Film">Radio/Television/ Film</div>
+                                <div class="item" value="Religious Studies">Religious Studies</div>
+                                <div class="item" value="Secondary Teaching">Secondary Teaching</div>
+                                <div class="item" value="Slavic Languages and Literatures">Slavic Languages and Literatures</div>
+                                <div class="item" value="Social Policy">Social Policy</div>
+                                <div class="item" value="Sociology ">Sociology </div>
+                                <div class="item" value="Spanish">Spanish</div>
+                                <div class="item" value="Statistics">Statistics</div>
+                                <div class="item" value="Theatre">Theatre</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field required">
+                        <label for="school">School</label>
+                        <div class="ui fluid search selection dropdown">
+                            <input type="hidden" name="school">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">School</div>
+                            <div class="menu">
+                                <div class="item" value="Weinberg">Weinberg</div>
+                                <div class="item" value="School of Education and Social Policy (SESP)">School of Education and Social Policy</div>
+                                <div class="item" value="McCormick">McCormick</div>
+                                <div class="item" value="School of Communications">School of Communications</div>
+                                <div class="item" value="Medill">Medill</div>
+                                <div class="item" value="Bienen">Bienen</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui hidden divider"></div>
+                <div class="required inline field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="terms" tabindex="0" class="hidden">
+                        <label>I agree to the terms and conditions</label>
+                    </div>
+                </div>
+                <div class="ui hidden divider"></div>
+                <div class="ui error message"></div>
+                <button class="ui button centered" type="submit" value="Submit">Submit</button>
+            </form>
+        </div>
+        <div class="ui message center aligned">
+            Already have an account? <a href="/login">Log In</a>
         </div>
     </div>
-    <script src="assets/main.js"></script>
+</div>
+<script src="assets/main.js"></script>
