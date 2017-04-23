@@ -5,7 +5,7 @@ var passport = require('passport');
 var router = express.Router();
 
 router.get('/', function(req, res){
-  res.render('index', { title: 'Index' });
+  res.render('index', { title: 'Index', errors : req.flash('error')});
 });
 
 router.get('/loggedin', function(req, res) {
@@ -36,7 +36,8 @@ router.get('/programs', function(req, res){
 
 router.post('/signup', passport.authenticate('local-signup', {
   successRedirect: '/profile',
-  failureRedirect: '/signup'
+  failureRedirect: '/signup',
+  failureFlash: true,
   })
 );
 

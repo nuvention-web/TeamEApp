@@ -21,14 +21,15 @@ module.exports = function(passport) {
 			passReqToCallback: true,
 		},
 		function(req, email, password, done) {
+			console.log(req.body);
 			var firstname = req.body.firstname;
-			var username = req.body.username;
 			var lastname = req.body.lastname;
 			var graduation = req.body.graduation;
 			var birthday = req.body.birthday;
 			var school = req.body.school;
 			var major = req.body.major;
 			var gender = req.body.gender;
+			var user = req.body;
 
 			process.nextTick(function() {
 				User.findOne({ 'local.email': email }, function(err, user) {
@@ -36,25 +37,21 @@ module.exports = function(passport) {
 						return done(err);
 					if (user) {
 						console.log(req);
-						return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
+						return done(null, false, req.flash('error', 'Email is already taken.'));
 					} else {
-						console.log('hello');
 						var newUser = new User();
 						newUser.local.email = email;
 						newUser.local.firstname = firstname;
 						newUser.local.lastname = lastname;
-						newUser.local.username = username;
 						newUser.local.password = newUser.generateHash(password);
 						newUser.local.graduation = graduation;
 						newUser.local.birthday = birthday;
 						newUser.local.school = school;
 						newUser.local.major = major;
 						newUser.local.gender= gender;
-						console.log('bye');
 						newUser.save(function(err) {
 							if (err)
 								throw err;
-							console.log('made it');
 							return done(null, newUser);
 						});
 					}
@@ -72,9 +69,9 @@ module.exports = function(passport) {
 				if (err)
 					return done(err);
 				if (!user)
-					return done(null, false, req.flash('loginMessage', 'No user found.'));
+					return done(null, false, req.flash('error', 'No user found.'));
 				if (!user.validPassword(password))
-					return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
+					return done(null, false, req.flash('error', 'Oops! Wrong password.'));
 				return done(null, user);
 			});
 		}));

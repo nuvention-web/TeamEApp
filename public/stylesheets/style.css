@@ -150,3 +150,7 @@ input.search:focus, input.search:focus {
     margin-left: auto !important;
     margin-right: auto !important;
 }
+
+.error {
+    color: #DB2828;
+}
