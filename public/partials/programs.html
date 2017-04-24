@@ -97,7 +97,7 @@ ga('send', {
   hitType: 'event',
   eventCategory: 'Search',
   eventAction: 'Searching',
-  eventLabel: document.getElementById("search_id").value
+  eventLabel: (document.getElementById("search_id").value).toLowerCase()
 });
 }
 
