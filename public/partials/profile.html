@@ -7,20 +7,24 @@
                 <table class="ui celled table">
                     <tbody>
                         <tr>
-                            <td>Username</td>
-                            <td>{{user.username}}</td>
+                            <td>Name:</td>
+                            <td>{{user.firstname}} {{user.lastname}}</td>
                         </tr>
                         <tr>
-                            <td>First Name:</td>
-                            <td>{{user.firstname}}</td>
-                        </tr>
-                        <tr>
-                            <td>Last Name:</td>
-                            <td>{{user.lastname}}</td>
-                        </tr>
-                        <tr>
-                            <td>Email:</td>
+                            <td>Email</td>
                             <td><a href="mailto:info@support.com"> {{user.email}}</a></td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth:</td>
+                            <td>{{user.birthday}}</td>
+                        </tr>
+                        <tr>
+                            <td>Graduation:</td>
+                            <td>{{user.graduation}}</td>
+                        </tr>
+                        <tr>
+                            <td>Major:</td>
+                            <td>{{user.school}} - {{user.major}}</td>
                         </tr>
                     </tbody>
                 </table>
