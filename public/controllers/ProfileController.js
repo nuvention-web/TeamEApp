@@ -2,7 +2,6 @@ app.controller('ProfileCtrl', ['$scope', 'CurrentUser', function($scope, Current
 	// $scope.user = CurrentUser;
 	CurrentUser.get(function(data) {
 		$scope.user = data.local;
-		console.log($scope.user);
 	});
 	
 }]);
