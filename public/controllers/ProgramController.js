@@ -1,4 +1,8 @@
-app.controller('ProgramCtrl', ['$scope', 'Programs', function($scope, Programs) {
+app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', function($scope, Programs, CurrentUser) {
+    CurrentUser.get(function(data) {
+        $scope.user = data.local;
+    });
+
     $scope.programs = Programs.query();
     
     $scope.editing = [];
