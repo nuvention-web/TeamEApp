@@ -12,42 +12,6 @@
 </div>
 
 <div class="ui container">
-    <div class="ui grid">
-        <div class="eight wide column">
-            <div class="ui header">
-            </div>
-            <div class="ui basic segment">
-                <table class="ui celled table">
-                    <tbody>
-                        <tr>
-                            <td>Name:</td>
-                            <td>{{user.firstname}} {{user.lastname}}</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td><a href="mailto:info@support.com"> {{user.email}}</a></td>
-                        </tr>
-                        <tr>
-                            <td>Date of Birth:</td>
-                            <td>{{user.birthday}}</td>
-                        </tr>
-                        <tr>
-                            <td>Graduation:</td>
-                            <td>{{user.graduation}}</td>
-                        </tr>
-                        <tr>
-                            <td>Major:</td>
-                            <td>{{user.school}} - {{user.major}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="ui container">
     <div class="ui three column grid">
         <div class="ui shape column" ng-repeat="program in programs | filter: search" emit-last-repeater-element>
             <div class="ui sides">
@@ -69,7 +33,7 @@
                                 <img src="assets/images/wireframe/image-square.png">
                             </div>
                             <div class="content">
-                                <a class="header">{{program.program}}</a>
+                                <a class="header" target="_blank" href="http://www.google.com" ng-click="trackInfo(program)">{{program.program}}</a>
                                 <div class="meta">
                                     <span class="group">{{program.location}}</span>
                                 </div>
@@ -115,6 +79,7 @@
         </div>
     </div>
 </div>
+<div id="HelpID" ng-controller="ProgramController"></div>
 <script src="assets/main.js"></script>
 
 <script>
@@ -133,9 +98,26 @@ function trackFunction() {
 ga('send', {
   hitType: 'event',
   eventCategory: 'Search',
-  eventAction: 'Searching',
-  eventLabel: (document.getElementById("search_id").value).toLowerCase()
+  eventAction: (document.getElementById("search_id").value).toLowerCase(),
+  eventLabel: angular.element(document.getElementById('HelpID')).scope().major(),
 });
+/*
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'Search',
+  eventAction: (document.getElementById("search_id").value).toLowerCase(),
+  eventLabel: angular.element(document.getElementById('HelpID')).scope().school(),
+  eventValue: 2
+});
+
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'Search',
+  eventAction: (document.getElementById("search_id").value).toLowerCase(),
+  eventLabel: angular.element(document.getElementById('HelpID')).scope().graduation(),
+  eventValue: 3
+});
+*/
 }
 
 function uniKeyCode(e) {
@@ -144,4 +126,16 @@ function uniKeyCode(e) {
     	trackFunction();
     }
 }
+
+function getInfo(name) {
+
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'Click',
+  eventAction: name,
+  eventLabel: angular.element(document.getElementById('HelpID')).scope().major()
+});
+
+}
+
 </script>
