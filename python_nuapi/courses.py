@@ -9,7 +9,7 @@ API_KEY = 'ne3ZnvhRAwjLFjOp'
 db_client = MongoClient('mongodb://NUVentionE:19951113@ds157499.mlab.com:57499/portaldata')
 db = db_client.portaldata
 
-collection = db.programs
+collection = db.academicprograms
 
 client = NorthwesternAPIClient(API_KEY)
 
@@ -38,6 +38,10 @@ for program in programs:
 	relevant_terms = terms[0:3]
 
 	course_data = []
+	program_subjects = []
+
+	# print client.subjects()
+	all_subjects = client.subjects()
 
 	# Get the first class in the first subject for the most recent term
 	for t in relevant_terms:
@@ -45,12 +49,20 @@ for program in programs:
 		for sub in courses.keys():
 			for c in courses[sub]:
 				course_data.append(client.courses(term=t['id'],subject=sub, catalog_num=c))
+			for s in all_subjects:
+				# print s
+				if s[u'symbol'] == sub and s[u'name'] not in program_subjects:
+					program_subjects.append(s[u'name'])
+
+	
+
 
 	course_data = filter(None, course_data)
 	course_data = [item for sublist in course_data for item in sublist]
 
 	collection.update({"_id": program["_id"]}, {"$set": {"course_data": course_data}})
+	collection.update({"_id": program["_id"]}, {"$set": {"subjects": program_subjects}})
 
 
-for program in collection.find():
-	pprint.pprint(program)
+#for program in collection.find():
+#	pprint.pprint(program)

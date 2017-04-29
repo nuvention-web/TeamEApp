@@ -1,0 +1,314 @@
+{
+    "Spanish Tutoring Hours": {
+        "_id": "58ac2b61f36d28790bce570c",
+        "program": "Spanish Tutoring Hours",
+        "location": "Kresge 3-533",
+        "contact": "AlfonsoFernandez2017@u.northwestern.edu",
+        "commitment": "Drop-in",
+        "link": "http://www.spanish-portuguese.northwestern.edu/undergraduate/resources/tutors.html",
+        "classes": [
+            "Spanish"
+        ],
+        "school": ["Weinberg College of Arts and Sciences"],
+        "times": {
+            "Monday": "4:00PM-6:00PM",
+            "Tuesday": "11:00AM-12:30PM",
+            "Wednesday": "1:30PM-3:00PM",
+            "Thursday": "2:30PM-3:30PM"
+        }
+    },
+    "Portuguese Tutoring Hours": {
+        "_id": "",
+        "program": "Portuguese Tutoring Hours",
+        "location": "Kresge 3-533",
+        "contact": "MarianaNeydaSilva2017@u.northwestern.edu",
+        "commitment": "Drop-in",
+        "link": "http://www.spanish-portuguese.northwestern.edu/undergraduate/resources/tutors.html",
+        "classes": [
+            "Portuguese"
+        ],
+        "school": ["Weinberg College of Arts and Sciences"],
+        "times": {
+            "Monday": "12:30PM-1:30PM",
+            "Tuesday": "3:30PM-5:00PM",
+            "Wednesday": "3:00PM-4:00PM",
+            "Thursday": "10:00AM-12:00PM"
+        }
+    },
+    "Undergraduate Chemistry Council (UCC) Tutoring": {
+        "_id": "58b5e3d3734d1d48176c6a66",
+        "program": "Undergraduate Chemistry Council (UCC) Tutoring",
+        "location": "TBD",
+        "contact": "alexandralee2018@u.northwestern.edu",
+        "commitment": "Drop-in",
+        "link": "http://chemgroups.northwestern.edu/ucc/#tutoring-section",
+        "classes": [
+            "Chem 101",
+            "Chem 102",
+            "Chem 103",
+            "Chem 171",
+            "Chem 172"
+        ],
+        "school": ["Weinberg College of Arts and Sciences"],
+        "times": {
+            "Sunday": "8:00PM-10:00PM",
+            "Monday": "8:00PM-10:00PM",
+            "Tuesday": "8:00PM-10:00PM",
+            "Wednesday": "8:00PM-10:00PM"
+        }
+    },
+    "Academic Mentoring Program (AMP)": {
+        "_id": "58ac2b37f36d28790bce56f8",
+        "program": "Academic Mentoring Program (AMP)",
+        "location": "",
+        "contact": "jamila.anderson@northwestern.edu",
+        "commitment": "Quarter-long",
+        "link": "http://www.northwestern.edu/searle/programs-events/undergrad/group-study/academic-mentoring-program/index.html",
+        "school": ["Weinberg College of Arts and Sciences"],
+        "classes": [
+            "Biol_Sci 215",
+            "Biol_Sci 217",
+            "Biol_Sci 219",
+            "Chem 101",
+            "Chem 102",
+            "Chem 103",
+            "Econ 201",
+            "Econ 202",
+            "Stat 210",
+            "Econ 310-1"
+        ],
+        "times": {}
+    },
+    "Gateway Science Workshop (GSW)": {
+        "_id": "58ac2b52f36d28790bce5706",
+        "program": "Gateway Science Workshop (GSW)",
+        "location": "",
+        "contact": "jamie.hoversen@northwestern.edu",
+        "commitment": "Quarter-long",
+        "link": "http://www.northwestern.edu/searle/programs-events/undergrad/group-study/gsw/index.html",
+        "classes": [
+            "Biol_Sci 215",
+            "Biol_Sci 217",
+            "Biol_Sci 219",
+            "Biol_Sci 308",
+            "Chem 101",
+            "Chem 102",
+            "Chem 103",
+            "Chem 210-1",
+            "Chem 210-2",
+            "Chem 210-3",
+            "EA1",
+            "EA2",
+            "EA3",
+            "EA4 Math 212",
+            "Math 213",
+            "Math 214",
+            "Math 220",
+            "Math 224",
+            "Math 230",
+            "Physics 130-1",
+            "Physics 130-2",
+            "Physics 130-3",
+            "Physics 135-1",
+            "Physics 135-2",
+            "Physics 135-3",
+            "Econ 201",
+            "Econ 202",
+            "Stat 210"
+        ],
+        "school": ["Weinberg College of Arts and Sciences", "McCormick School of Engineering and Applied Science"],
+        "times": {}
+    },
+    "The Writing Place": {
+        "_id": "58b27100f36d281facb5623a",
+        "program": "The Writing Place",
+        "location": "University Library, Room 2304",
+        "contact": "",
+        "commitment": "Appointment",
+        "link": "http://www.writing.northwestern.edu/",
+        "classes": [
+            "GEN_CMN 101",
+            "GEN_CMN 102",
+            "GEN_CMN 103"
+        ],
+        "school": ["Weinberg College of Arts and Sciences"],
+        "times": {
+            "Sunday": "8:00AM-10:00PM",
+            "Monday": "8:00AM-10:00PM",
+            "Tuesday": "8:00AM-10:00PM",
+            "Wednesday": "8:00AM-10:00PM",
+            "Thursday": "8:00AM-10:00PM",
+            "Friday": "8:00AM-10:00PM",
+            "Saturday": "8:00AM-10:00PM"
+        }
+    },
+    "Tech Tutoring": {
+        "_id": "58ac2b20f36d28790bce56f5",
+        "program": "Tech Tutoring",
+        "location": "MG28",
+        "contact": "ueoffice@northwestern.edu",
+        "commitment": "Drop-in",
+        "link": "http://www.mccormick.northwestern.edu/students/undergraduate/tutoring.html",
+        "classes": [
+            "Math 220",
+            "Math 224",
+            "Math 230",
+            "Math 234",
+            "Chem 101",
+            "Chem 102",
+            "Chem 103",
+            "Physics 125-1",
+            "Physics 125-2",
+            "Physics 125-3",
+            "Physics 130-1",
+            "Physics 130-2",
+            "Physics 130-3",
+            "Physics 135-1",
+            "Physics 135-2",
+            "Physics 135-3",
+            "Gen_Eng 205-1",
+            "Gen_Eng 205-2",
+            "Gen_Eng 205-3",
+            "Gen_Eng 205-4",
+            "Mech_Eng 222",
+            "Chem_Eng 211",
+            "Mech_Eng 322",
+            "BMD_Eng 250",
+            "Gen_Eng 206-1",
+            "Gen_Eng 206-2",
+            "Gen_Eng 206-3",
+            "Gen_Eng 206-4",
+            "Thermodynamics",
+            "Mechanics"
+        ],
+        "school": ["McCormick School of Engineering and Applied Science"],
+        "times": {
+            "Monday": "2:00PM-5:00PM, 7:00PM-10:00PM",
+            "Tuesday": "2:30PM-5:30PM, 7:00PM-10:00PM",
+            "Wednesday": "2:00PM-5:00PM, 7:00PM-10:00PM",
+            "Thursday": "2:30PM-5:30PM, 7:00PM-10:00PM"
+        }
+    },
+    "Calculus, Chemistry, and Physics Undergraduate Tutoring Room": {
+        "_id": "58ac2ae6f36d28790bce56e0",
+        "program": "Calculus, Chemistry, and Physics Undergraduate Tutoring Room",
+        "location": "Tech HG04",
+        "times": {
+            "Sunday": "8:00PM-10:00PM",
+            "Monday": "8:00PM-10:00PM",
+            "Tuesday": "8:00PM-10:00PM",
+            "Wednesday": "8:00PM-10:00PM"
+        },
+        "contact": "",
+        "commitment": "Drop-in",
+        "link": "http://www.math.northwestern.edu/undergraduate/tutoring.html",
+        "classes": [
+            "Math 212",
+            "Math 213",
+            "Math 214",
+            "Math 220",
+            "Math 224",
+            "Math 230",
+            "Math 234",
+            "Math 240",
+            "Math 250",
+            "Chem 101",
+            "Chem 102",
+            "Chem 103",
+            "Chem 171",
+            "Chem 172",
+            "Physics 130-1",
+            "Physics 130-2",
+            "Physics 130-3",
+            "Physics 135-1",
+            "Physics 135-2",
+            "Physics 135-3"
+        ],
+        "school": ["Weinberg College of Arts and Sciences", "McCormick School of Engineering and Applied Science"]
+    },
+    "Peer-Led Undergraduate Study (PLUS)": {
+        "_id": "58baeb41734d1d10ff5fd37f",
+        "program": "Peer-Led Undergraduate Study (PLUS)",
+        "location": "Shepard Engagement Center, B25",
+        "contact": "una.mcgeough@northwestern.edu",
+        "commitment": "Drop-in",
+        "link": "http://www.northwestern.edu/searle/programs-events/undergrad/group-study/plus.html",
+        "classes": [
+            "BIOL_Sci 215",
+            "BIOL_Sci 217",
+            "BIOL_Sci 219",
+            "Chem 101",
+            "Chem 102",
+            "Chem 103",
+            "Chem 210",
+            "Econ 201",
+            "Econ 202",
+            "Econ 310-1",
+            "Gen_Eng 205-1",
+            "Gen_Eng 205-2",
+            "Gen_Eng 206-1",
+            "Gen_Eng 206-2",
+            "MATH 212",
+            "MATH 213",
+            "MATH 214",
+            "MATH 220",
+            "MATH 224",
+            "MATH 230",
+            "Physics 130-1",
+            "Physics 130-2",
+            "Physics 130-3",
+            "Physics 135-1",
+            "Physics 135-2",
+            "Physics 135-3",
+            "Stat 210"
+        ],
+        "school": ["Weinberg College of Arts and Sciences", "McCormick School of Engineering and Applied Science"],
+        "times": {
+            "Sunday": "3:00PM-5:00PM"
+        }
+    },
+    "Physics Tutor Hours": {
+        "_id": "",
+        "program": "Physics Tutor Hours",
+        "location": "Dearborn Observatory, Room 14",
+        "contact": "nwu.sps@gmail.com",
+        "commitment": "Drop-in",
+        "link": "http://www.physics.northwestern.edu/undergraduate/tutoring.html#",
+        "classes": [
+          "Physics 130-1",
+          "Physics 130-2",
+          "Physics 130-3",
+          "Physics 135-1",
+          "Physics 135-2",
+          "Physics 135-3",
+          "Physics 136-1",
+          "Physics 136-2",
+          "Physics 136-3"
+            
+        ],
+        "school": ["Weinberg College of Arts and Sciences"],
+        "times": {
+            "Monday": "12:00PM-8:00PM",
+            "Tuesday": "12:00PM-8:00PM",
+            "Wednesday": "12:00PM-8:00PM",
+            "Thursday": "12:00PM-7:00PM"
+        }
+    },
+    "German Writing Center": {
+        "_id": "",
+        "program": "German Writing Center",
+        "location": "800 Sherman, Suite 106, Room 104",
+        "contact": "germanwritingcenter@northwestern.edu",
+        "commitment": "Drop-in",
+        "link": "http://www.german.northwestern.edu/news-events/writing-center.html",
+        "classes": [
+          "German"
+            
+        ],
+        "school": ["Weinberg College of Arts and Sciences"],
+        "times": {
+            "Tuesday": "12:00PM-3:00PM",
+            "Thursday": "2:00PM-5:00PM"
+        }
+    }
+}
