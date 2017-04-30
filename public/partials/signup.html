@@ -111,125 +111,112 @@ $('.ui.form').form({
                     </div>
                     <div class="field required">
                         <label for="gender">Gender</label>
-                        <div class="ui fluid search selection dropdown">
-                            <input type="hidden" name="gender">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Gender</div>
-                            <div class="menu">
-                                <div class="item" value="Male">Male</div>
-                                <div class="item" value="Female">Female</div>
-                                <div class="item" value="Other">Other</div>
-                            </div>
-                        </div>
+                        <select class="ui fluid search selection dropdown" name="gender"><i class="dropdown icon"></i>
+                            <option value="">Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </div>
                 </div>
                 <div class="equal width fields">
                     <div class="field required">
-                        <label>Major</label>
-                        <!-- <input type="text" name="major" placeholder="Major"> -->
-                        <div class="ui fluid search selection dropdown">
-                            <input type="hidden" name="major">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Major</div>
-                            <div class="menu">
-                                <div class="item" value="African American Studies">African American Studies</div>
-                                <div class="item" value="American Studies">American Studies</div>
-                                <div class="item" value="Anthropology">Anthropology</div>
-                                <div class="item" value="Applied Mathematics">Applied Mathematics</div>
-                                <div class="item" value="Art History">Art History</div>
-                                <div class="item" value="Art Theory and Practice">Art Theory and Practice</div>
-                                <div class="item" value="Asian American Studies">Asian American Studies</div>
-                                <div class="item" value="Asian Languages and Cultures">Asian Languages and Cultures</div>
-                                <div class="item" value="Asian Studies">Asian Studies</div>
-                                <div class="item" value="Biological Sciences">Biological Sciences</div>
-                                <div class="item" value="Biomedical Engineering">Biomedical Engineering</div>
-                                <div class="item" value="Chemical Engineering">Chemical Engineering</div>
-                                <div class="item" value="Chemistry">Chemistry</div>
-                                <div class="item" value="Civil Engineering">Civil Engineering</div>
-                                <div class="item" value="Classics">Classics</div>
-                                <div class="item" value="Cognitive Science">Cognitive Science</div>
-                                <div class="item" value="Combined Engineering and Communication Program">Combined Engineering and Communication Program</div>
-                                <div class="item" value="Combined Music & Engineering Program">Combined Music & Engineering Program</div>
-                                <div class="item" value="Communication Studies">Communication Studies</div>
-                                <div class="item" value="Comparative Literary Studies">Comparative Literary Studies</div>
-                                <div class="item" value="Computer Engineering">Computer Engineering</div>
-                                <div class="item" value="Computer Science (BS)">Computer Science (BS)</div>
-                                <div class="item" value="Computer Science BA-CS">Computer Science BA-CS</div>
-                                <div class="item" value="Dance">Dance</div>
-                                <div class="item" value="Earth and Planetary Sciences">Earth and Planetary Sciences</div>
-                                <div class="item" value="Economics">Economics</div>
-                                <div class="item" value="Electrical Engineering">Electrical Engineering</div>
-                                <div class="item" value="English: Creative Writing">English: Creative Writing</div>
-                                <div class="item" value="English: Literature">English: Literature</div>
-                                <div class="item" value="Environmental Engineering">Environmental Engineering</div>
-                                <div class="item" value="Environmental Sciences">Environmental Sciences</div>
-                                <div class="item" value="French">French</div>
-                                <div class="item" value="Gender and Sexuality Studies">Gender and Sexuality Studies</div>
-                                <div class="item" value="German">German</div>
-                                <div class="item" value="History">History</div>
-                                <div class="item" value="Honors Program in Medical Education (HPME)">Honors Program in Medical Education (HPME)</div>
-                                <div class="item" value="Human Communication Sciences">Human Communication Sciences</div>
-                                <div class="item" value="Human Development and Psychological Services">Human Development and Psychological Services</div>
-                                <div class="item" value="Industrial Engineering">Industrial Engineering</div>
-                                <div class="item" value="Integrated Engineering Studies (MIES)">Integrated Engineering Studies (MIES)</div>
-                                <div class="item" value="Integrated Science Program">Integrated Science Program</div>
-                                <div class="item" value="Italian">Italian</div>
-                                <div class="item" value="Jewish Studies">Jewish Studies</div>
-                                <div class="item" value="Journalism">Journalism</div>
-                                <div class="item" value="Latina and Latino Studies">Latina and Latino Studies</div>
-                                <div class="item" value="Learning and Organizational Change">Learning and Organizational Change</div>
-                                <div class="item" value="Linguistics">Linguistics</div>
-                                <div class="item" value="Manufacturing & Design Engineering (BS-MaDE)">Manufacturing & Design Engineering (BS-MaDE)</div>
-                                <div class="item" value="Materials Science and Engineering (BA)">Materials Science and Engineering (BA)</div>
-                                <div class="item" value="Materials Science and Engineering (BS)">Materials Science and Engineering (BS)</div>
-                                <div class="item" value="Mathematical Methods in the Social Sciences">Mathematical Methods in the Social Sciences</div>
-                                <div class="item" value="Mathematics">Mathematics</div>
-                                <div class="item" value="Mechanical Engineering">Mechanical Engineering</div>
-                                <div class="item" value="Middle East North African Studies">Middle East North African Studies</div>
-                                <div class="item" value="Music Performance: Brass">Music Performance: Brass</div>
-                                <div class="item" value="Music Performance: Percussion">Music Performance: Percussion</div>
-                                <div class="item" value="Music Performance: Piano">Music Performance: Piano</div>
-                                <div class="item" value="Music Performance: Strings">Music Performance: Strings</div>
-                                <div class="item" value="Music Performance: Voice & Opera">Music Performance: Voice & Opera</div>
-                                <div class="item" value="Music Performance: Woodwinds">Music Performance: Woodwinds</div>
-                                <div class="item" value="Music Studies: Composition and Music Technology">Music Studies: Composition and Music Technology</div>
-                                <div class="item" value="Music Studies: Music Education">Music Studies: Music Education</div>
-                                <div class="item" value="Music Studies: Musicology">Music Studies: Musicology</div>
-                                <div class="item" value="Music Studies: Music Theory and Cognition">Music Studies: Music Theory and Cognition</div>
-                                <div class="item" value="Neuroscience">Neuroscience</div>
-                                <div class="item" value="Northwestern Undergraduate Premedical Scholars Program (NUPSP)">Northwestern Undergraduate Premedical Scholars Program (NUPSP)</div>
-                                <div class="item" value="Performance Studies">Performance Studies</div>
-                                <div class="item" value="Philosophy">Philosophy</div>
-                                <div class="item" value="Physics and Astronomy">Physics and Astronomy</div>
-                                <div class="item" value="Political Science">Political Science</div>
-                                <div class="item" value="Psychology">Psychology</div>
-                                <div class="item" value="Radio/Television/ Film">Radio/Television/ Film</div>
-                                <div class="item" value="Religious Studies">Religious Studies</div>
-                                <div class="item" value="Secondary Teaching">Secondary Teaching</div>
-                                <div class="item" value="Slavic Languages and Literatures">Slavic Languages and Literatures</div>
-                                <div class="item" value="Social Policy">Social Policy</div>
-                                <div class="item" value="Sociology ">Sociology </div>
-                                <div class="item" value="Spanish">Spanish</div>
-                                <div class="item" value="Statistics">Statistics</div>
-                                <div class="item" value="Theatre">Theatre</div>
-                            </div>
-                        </div>
+                        <label for="major">Major</label>
+                        <select name="major" class="ui fluid search selection dropdown"><i class="dropdown icon"></i>
+                            <option value="">Major</option>
+                            <option class="item" value="African American Studies">African American Studies</option>
+                            <option class="item" value="American Studies">American Studies</option>
+                            <option class="item" value="Anthropology">Anthropology</option>
+                            <option class="item" value="Applied Mathematics">Applied Mathematics</option>
+                            <option class="item" value="Art History">Art History</option>
+                            <option class="item" value="Art Theory and Practice">Art Theory and Practice</option>
+                            <option class="item" value="Asian American Studies">Asian American Studies</option>
+                            <option class="item" value="Asian Languages and Cultures">Asian Languages and Cultures</option>
+                            <option class="item" value="Asian Studies">Asian Studies</option>
+                            <option class="item" value="Biological Sciences">Biological Sciences</option>
+                            <option class="item" value="Biomedical Engineering">Biomedical Engineering</option>
+                            <option class="item" value="Chemical Engineering">Chemical Engineering</option>
+                            <option class="item" value="Chemistry">Chemistry</option>
+                            <option class="item" value="Civil Engineering">Civil Engineering</option>
+                            <option class="item" value="Classics">Classics</option>
+                            <option class="item" value="Cognitive Science">Cognitive Science</option>
+                            <option class="item" value="Combined Engineering and Communication Program">Combined Engineering and Communication Program</option>
+                            <option class="item" value="Combined Music & Engineering Program">Combined Music & Engineering Program</option>
+                            <option class="item" value="Communication Studies">Communication Studies</option>
+                            <option class="item" value="Comparative Literary Studies">Comparative Literary Studies</option>
+                            <option class="item" value="Computer Engineering">Computer Engineering</option>
+                            <option class="item" value="Computer Science (BS)">Computer Science (BS)</option>
+                            <option class="item" value="Computer Science BA-CS">Computer Science BA-CS</option>
+                            <option class="item" value="Dance">Dance</option>
+                            <option class="item" value="Earth and Planetary Sciences">Earth and Planetary Sciences</option>
+                            <option class="item" value="Economics">Economics</option>
+                            <option class="item" value="Electrical Engineering">Electrical Engineering</option>
+                            <option class="item" value="English: Creative Writing">English: Creative Writing</option>
+                            <option class="item" value="English: Literature">English: Literature</option>
+                            <option class="item" value="Environmental Engineering">Environmental Engineering</option>
+                            <option class="item" value="Environmental Sciences">Environmental Sciences</option>
+                            <option class="item" value="French">French</option>
+                            <option class="item" value="Gender and Sexuality Studies">Gender and Sexuality Studies</option>
+                            <option class="item" value="German">German</option>
+                            <option class="item" value="History">History</option>
+                            <option class="item" value="Honors Program in Medical Education (HPME)">Honors Program in Medical Education (HPME)</option>
+                            <option class="item" value="Human Communication Sciences">Human Communication Sciences</option>
+                            <option class="item" value="Human Development and Psychological Services">Human Development and Psychological Services</option>
+                            <option class="item" value="Industrial Engineering">Industrial Engineering</option>
+                            <option class="item" value="Integrated Engineering Studies (MIES)">Integrated Engineering Studies (MIES)</option>
+                            <option class="item" value="Integrated Science Program">Integrated Science Program</option>
+                            <option class="item" value="Italian">Italian</option>
+                            <option class="item" value="Jewish Studies">Jewish Studies</option>
+                            <option class="item" value="Journalism">Journalism</option>
+                            <option class="item" value="Latina and Latino Studies">Latina and Latino Studies</option>
+                            <option class="item" value="Learning and Organizational Change">Learning and Organizational Change</option>
+                            <option class="item" value="Linguistics">Linguistics</option>
+                            <option class="item" value="Manufacturing & Design Engineering (BS-MaDE)">Manufacturing & Design Engineering (BS-MaDE)</option>
+                            <option class="item" value="Materials Science and Engineering (BA)">Materials Science and Engineering (BA)</option>
+                            <option class="item" value="Materials Science and Engineering (BS)">Materials Science and Engineering (BS)</option>
+                            <option class="item" value="Mathematical Methods in the Social Sciences">Mathematical Methods in the Social Sciences</option>
+                            <option class="item" value="Mathematics">Mathematics</option>
+                            <option class="item" value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option class="item" value="Middle East North African Studies">Middle East North African Studies</option>
+                            <option class="item" value="Music Performance: Brass">Music Performance: Brass</option>
+                            <option class="item" value="Music Performance: Percussion">Music Performance: Percussion</option>
+                            <option class="item" value="Music Performance: Piano">Music Performance: Piano</option>
+                            <option class="item" value="Music Performance: Strings">Music Performance: Strings</option>
+                            <option class="item" value="Music Performance: Voice & Opera">Music Performance: Voice & Opera</option>
+                            <option class="item" value="Music Performance: Woodwinds">Music Performance: Woodwinds</option>
+                            <option class="item" value="Music Studies: Composition and Music Technology">Music Studies: Composition and Music Technology</option>
+                            <option class="item" value="Music Studies: Music Education">Music Studies: Music Education</option>
+                            <option class="item" value="Music Studies: Musicology">Music Studies: Musicology</option>
+                            <option class="item" value="Music Studies: Music Theory and Cognition">Music Studies: Music Theory and Cognition</option>
+                            <option class="item" value="Neuroscience">Neuroscience</option>
+                            <option class="item" value="Northwestern Undergraduate Premedical Scholars Program (NUPSP)">Northwestern Undergraduate Premedical Scholars Program (NUPSP)</option>
+                            <option class="item" value="Performance Studies">Performance Studies</option>
+                            <option class="item" value="Philosophy">Philosophy</option>
+                            <option class="item" value="Physics and Astronomy">Physics and Astronomy</option>
+                            <option class="item" value="Political Science">Political Science</option>
+                            <option class="item" value="Psychology">Psychology</option>
+                            <option class="item" value="Radio/Television/ Film">Radio/Television/ Film</option>
+                            <option class="item" value="Religious Studies">Religious Studies</option>
+                            <option class="item" value="Secondary Teaching">Secondary Teaching</option>
+                            <option class="item" value="Slavic Languages and Literatures">Slavic Languages and Literatures</option>
+                            <option class="item" value="Social Policy">Social Policy</option>
+                            <option class="item" value="Sociology ">Sociology </option>
+                            <option class="item" value="Spanish">Spanish</option>
+                            <option class="item" value="Statistics">Statistics</option>
+                            <option class="item" value="Theatre">Theatre</option>
+                        </select>
                     </div>
                     <div class="field required">
                         <label for="school">School</label>
-                        <div class="ui fluid search selection dropdown">
-                            <input type="hidden" name="school">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">School</div>
-                            <div class="menu">
-                                <div class="item" value="Weinberg">Weinberg</div>
-                                <div class="item" value="School of Education and Social Policy (SESP)">School of Education and Social Policy</div>
-                                <div class="item" value="McCormick School of Engineering and Applied Science">McCormick</div>
-                                <div class="item" value="School of Communication">School of Communication</div>
-                                <div class="item" value="Medill School of Journalism">Medill</div>
-                                <div class="item" value="Bienen School of Music">Bienen</div>
-                            </div>
-                        </div>
+                        <select class="ui fluid search selection dropdown" name="school"><i class="dropdown icon"></i>
+                            <option value="">School</div>
+                                <option class="item" value="Weinberg">Weinberg</option>
+                                <option class="item" value="School of Education and Social Policy (SESP)">School of Education and Social Policy</option>
+                                <option class="item" value="McCormick School of Engineering and Applied Science">McCormick</option>
+                                <option class="item" value="School of Communication">School of Communication</option>
+                                <option class="item" value="Medill School of Journalism">Medill</option>
+                                <option class="item" value="Bienen School of Music">Bienen</option>
+                        </select>
                     </div>
                 </div>
                 <div class="ui hidden divider"></div>

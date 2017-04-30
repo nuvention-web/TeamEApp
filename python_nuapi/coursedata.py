@@ -4,6 +4,21 @@ import json
 from nuapiclient import NorthwesternAPIClient
 import pprint
 
+def remove_dup_classes(courses):
+	data = []
+
+	subject_track = {}
+
+	for c in courses:
+		if c[u'subject'] not in subject_track.keys():
+			data.append(c)
+			subject_track[c[u'subject']] = [c[u'catalog_num']]
+		else:
+			if c[u'catalog_num'] not in subject_track[c[u'subject']]:
+				data.append(c)
+				subject_track[c[u'subject']].append(c[u'catalog_num'])
+	return data
+
 API_KEY = 'ne3ZnvhRAwjLFjOp'
 
 db_client = MongoClient('mongodb://NUVentionE:19951113@ds157499.mlab.com:57499/portaldata')
@@ -12,11 +27,9 @@ db = db_client.portaldata
 collection = db.programs
 
 client = NorthwesternAPIClient(API_KEY)
-
 programs = collection.find()
 for program in programs:
-	p = collection.find_one({"_id": program["_id"]});
-	course_list = p['classes']
+	course_list = program['classes']
 	courses = {}
 
 	for i in range(len(course_list)):
@@ -55,13 +68,12 @@ for program in programs:
 					program_subjects.append(s[u'name'])
 
 	
-
-
 	course_data = filter(None, course_data)
-	pprint.pprint(course_data) 
 	course_data = [item for sublist in course_data for item in sublist]
-	pprint.pprint(course_data) 
-	#collection.update({"_id": program["_id"]}, {"$set": {"course_data": course_data}})
-	#collection.update({"_id": program["_id"]}, {"$set": {"subjects": program_subjects}})
+	course_data = remove_dup_classes(course_data)
+
+	collection.update({"_id": program["_id"]}, {"$set": {"course_data": course_data}})
+	collection.update({"_id": program["_id"]}, {"$set": {"subjects": program_subjects}})
+
 
 

@@ -1,8 +1,7 @@
 <div class="ui container">
-    <div class="ui grid">
-        <div class="eight wide column">
-            <div class="ui header">
-            </div>
+    <div class="ui one column grid">
+        <div class="column">
+            <h1>Profile</h1>
             <div class="ui basic segment">
                 <table class="ui celled table">
                     <tbody>
@@ -32,3 +31,60 @@
         </div>
     </div>
 </div>
+<div class="ui container">
+    <div class="ui two column grid">
+        <div class="sixteen wide column">
+            <div class="ui header">
+                <h1>Suggested Programs</h1></div>
+        </div>
+        <div class="column ui shape" ng-repeat="program in programs | filter: user.school : schoolFilter:searchCriteria:user.school" emit-last-repeater-element>
+            <div class="ui sides">
+                <div class="active side">
+                    <div class="ui card">
+                        <div class="content">
+                            <a class="header">{{program.program}}</a>
+                            <div class="meta">
+                                <span class="group">{{program.location}}</span>
+                            </div>
+                            <div class="description">
+                                <span ng-repeat="time in program.times">
+                        <span ng-repeat="(day,hours) in time"> {{day}} </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="right floated author">
+                                <a class="flip-over">
+        
+        See courses <i class="fa fa-angle-right"></i>
+      </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="side">
+                    <div class="ui  card">
+                        <div class="content">
+                            <a class="header">Courses</a>
+                            <div class="description">
+                                <div class="ui mini list" ng-if="program.course_data != []">
+                                    <div class="item" ng-repeat="course in program.course_data | unique: 'course_id' | orderBy: 'course_id'">{{course.subject}} {{course.catalog_num}}: {{course.title}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="right floated author">
+                                <a class="button flip-over">
+        
+        See courses <i class="fa fa-angle-right"></i>
+      </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/main.js"></script>
