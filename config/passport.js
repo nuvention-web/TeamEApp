@@ -21,7 +21,6 @@ module.exports = function(passport) {
 			passReqToCallback: true,
 		},
 		function(req, email, password, done) {
-			console.log(req.body);
 			var firstname = req.body.firstname;
 			var lastname = req.body.lastname;
 			var graduation = req.body.graduation;

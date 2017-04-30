@@ -3,11 +3,12 @@ var ProgramSchema = new mongoose.Schema({
 	program: String,
 	location: String,
 	times : [{String : String}],
-	hours: [String],
 	classes: [String],
+	school: [String],
 	commitment: String,
 	link: String,
-	contact: String
+	contact: String,
+	subjects: [String]
 });
 
 module.exports = mongoose.model('Program', ProgramSchema);

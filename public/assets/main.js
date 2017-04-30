@@ -19,8 +19,7 @@ $(document).ready(function() {
     $('.special.cards .image').dimmer({
         on: 'hover'
     });
-
-    $('.shape').shape({ 'width': 'next', 'height': 'next' });
+    $('.shape').shape();
 
     $('.ui.menu .ui.dropdown').dropdown({
         on: 'hover'

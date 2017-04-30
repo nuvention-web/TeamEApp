@@ -4,10 +4,4 @@ app.component('navbar', {
         
     },
     controllerAs: 'NavbarCtrl'
-}).component('searchbar', {
-	templateUrl: '/partials/searchbar.html',
-    controller: function SearchBarController() {
-        
-    },
-    controllerAs: 'SearchBarCtrl'
 });

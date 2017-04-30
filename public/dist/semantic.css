@@ -18550,8 +18550,8 @@ ol.ui.horizontal.list li:before,
 }
 
 .ui.grid > * {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 /*-------------------
