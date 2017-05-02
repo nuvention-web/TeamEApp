@@ -180,6 +180,14 @@ input.search:focus, input.search:focus {
     color: #DB2828;
 }
 
+.padded-container {
+    padding: 1em;
+}
+
+.extra-padding-bottom {
+    padding-bottom: calc(2.5%);
+}
+
 
 /* RESPONSIVE CLASSES */
 
@@ -196,6 +204,25 @@ input.search:focus, input.search:focus {
     .hide-on-xs-and-down {
         display: none !important;
     }
+    .show-on-xs-only,
+    .show-on-xs-and-down {
+        display: block !important;
+    }
+
+    nav#nav {
+        width: 100%;
+    }
+    nav#nav {
+        width: 100%;
+    }
+    #header #nav {
+        margin-top: 5em;
+    }
+    .menu-children {
+        padding-left: 0 !important;
+        /* position: absolute !important; */
+
+    }
 }
 
 
@@ -205,6 +232,12 @@ input.search:focus, input.search:focus {
     .hide-on-sm-and-down {
         display: none !important;
     }
+
+    .show-on-sm-and-down {
+        display: block !important;
+    }
+
+
 }
 
 
@@ -213,6 +246,9 @@ input.search:focus, input.search:focus {
 @media (min-width: 48em) and (max-width: 64em) {
     .hide-on-sm-only {
         display: none !important;
+    }
+    .show-on-sm-only {
+        display: block !important;
     }
 }
 
@@ -223,6 +259,10 @@ input.search:focus, input.search:focus {
     .hide-on-sm-and-up {
         display: none !important;
     }
+
+    .show-on-sm-and-up {
+        display: block !important;
+    }
 }
 
 
@@ -231,6 +271,9 @@ input.search:focus, input.search:focus {
 @media (max-width: 75em) {
     .hide-on-md-and-down {
         display: none !important;
+    }
+    .show-on-md-and-down {
+        display: block !important;
     }
 }
 
@@ -241,6 +284,9 @@ input.search:focus, input.search:focus {
     .hide-on-md-only {
         display: none !important;
     }
+    .show-on-md-only {
+        display: block !important;
+    }
 }
 
 
@@ -250,6 +296,9 @@ input.search:focus, input.search:focus {
     .hide-on-md-and-up {
         display: none !important;
     }
+    .show-on-md-and-up {
+        display: block !important;
+    }
 }
 
 
@@ -258,5 +307,9 @@ input.search:focus, input.search:focus {
 @media (min-width: 75em) {
     .hide-on-lg {
         display: none !important;
+    }
+
+    .show-on-lg {
+        display: block !important;
     }
 }
