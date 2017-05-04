@@ -1,6 +1,7 @@
-<div class="container-fluid padding-top-bottom">
-    <div class="row">
-        <div class="col col-xs-12">
+<div class="container-fluid padding-top-bottom extra-padding-sides">
+    <div class="row extra-padding-top">
+        <div class="col col-xs-12 col-sm-6 margin-bottom">
+        <div class="row start-sm center-xs start-xs">
             <div class="ui action left icon input">
                 <i class="search icon"></i>
                 <input name="search" id="search_id" placeholder="Search..." type="text" ng-model="userInput" ng-keydown="applySearchEnter($event)" onkeydown="uniKeyCode(event)" autofocus="autofocus">
@@ -8,10 +9,19 @@
                 <br>
                 <div class="ui blue button" ng-click="clearing()">View All</div>
             </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="row end-sm center-xs">
+                <button class="col-xs-3 ui button active" value="">All</button>
+                <button class="col-xs-3 ui button" value="Weinberg College of Arts and Sciences">Weinberg</button>
+                <button class="col-xs-3 ui button" value="Weinberg College of Arts and Sciences">Weinberg</button>
+            </div>
+                
         </div>
     </div>
 </div>
-<div class="container-fluid padding-top-bottom">
+<div class="container-fluid padding-top-bottom extra-padding-sides">
     <div class="row">
         <div class="col-xs-6 col-sm-4" id="program-col" ng-repeat="program in ranked_programs | filter: search | orderBy:'-rank'" emit-last-repeater-element>
             <div class="ui card">

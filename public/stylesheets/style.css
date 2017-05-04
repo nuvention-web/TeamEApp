@@ -83,6 +83,10 @@ input.search:focus, input.search:focus {
     padding: 1em .5em;
 }
 
+.margin-bottom {
+    margin-bottom: 1em !important;
+}
+
 .no-margin-bottom {
     margin-bottom: 0 !important;
 }
@@ -205,6 +209,11 @@ input.search:focus, input.search:focus {
     width: 100%;
     padding-top: 1em;
     padding-bottom: 1em;
+}
+
+.extra-padding-sides {
+    padding-left: calc(5%) !important;
+    padding-right: calc(5%) !important;
 }
 
 
