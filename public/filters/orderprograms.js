@@ -1,4 +1,4 @@
-myApp.filter('schoolFilter', [function($filter) {
+app.filter('schoolFilter', [function($filter) {
   return function(inputArray, searchCriteria, target) {
     if (!angular.isDefined(searchCriteria) || searchCriteria == '') {
       return inputArray;

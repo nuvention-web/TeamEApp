@@ -1,9 +1,10 @@
 app.controller('ProfileCtrl', ['$scope', 'CurrentUser', 'Programs', function($scope, CurrentUser, Programs) {
 
-	CurrentUser.get(function(data) {
+	$scope.user = CurrentUser.get(function(data) {
 		$scope.user = data.local;
 	});
 
+    console.log($scope.user);
 	$scope.programs = Programs.query();
 	
 	$scope.$on('LastRepeaterElement', function() {

@@ -1,7 +1,8 @@
 $(document).ready(function() {
-    menu_resize();
     $(".menu-responsive > .menu-item.menu-has-children > .menu-link + .menu-children").hide();
 
+    menu_resize();
+    
     $(".menu-responsive > .menu-item.menu-has-children > .menu-link").click(function() {
         $(this).parent().toggleClass('active');
         $('.menu-responsive > .menu-item.menu-has-children > .menu-link').focus().toggleClass("expanded");
@@ -27,6 +28,7 @@ $(document).ready(function() {
     };
 
     $(window).on('load resize', function() {
+        $(".menu-responsive > .menu-item.menu-has-children > .menu-link + .menu-children").hide();
         menu_resize();
     });
 

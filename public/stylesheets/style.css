@@ -10,6 +10,14 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+ng-view.ng-scope {
+    position: absolute;
+    top: 0;
+    margin-top: 3em;
+    width: 100%;
+    min-height: calc(100% - 3em);
+}
+
 h1,
 h2,
 h3,
@@ -186,6 +194,10 @@ input.search:focus, input.search:focus {
 
 .extra-padding-bottom {
     padding-bottom: calc(2.5%);
+}
+
+.extra-padding-top {
+    padding-top: calc(2.5%);
 }
 
 

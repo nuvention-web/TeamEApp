@@ -177,7 +177,7 @@ ul {
 .fa.fa-angle-up,
 .fa.fa-angle-down {
 	font-weight: bold;
-	padding-left: 3px;
+	padding-left: 5px;
 }
 
 #nav {
@@ -255,4 +255,8 @@ ul {
 
 .dropdown-background {
 	background-color: #342F2E;
+}
+
+.menu-responsive > .menu-item.menu-has-children > .menu-link + .menu-children {
+	display: none;
 }
