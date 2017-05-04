@@ -8,8 +8,6 @@ app.filter('schoolFilter', [function($filter) {
       if (program.school.indexOf(target) > -1) {
 
         data.push(item);
-        item.relevance = 1;
-        console.log(item);
         
       }
     });

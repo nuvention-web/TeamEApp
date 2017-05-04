@@ -1,4 +1,4 @@
-<div class="container-fluid extra-padding-top">
+<div class="container-fluid padding-top-bottom">
     <div class="row">
         <div class="col col-xs-12">
             <div class="ui action left icon input">
@@ -11,52 +11,27 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid padding-top-bottom">
     <div class="row">
-        <div class="column ui shape" ng-repeat="program in ranked_programs | filter: search | orderBy:'-rank'" emit-last-repeater-element>
-            <div class="ui sides">
-                <div class="active side">
-                    <div class="ui card">
-                        <div class="content">
-                            <a class="header">{{program.program}}</a>
-                            <div class="meta">
-                                <span class="group">{{program.location}}</span>
-                            </div>
-                            <div class="description">
-                                <span ng-repeat="time in program.times">
-                        <span ng-repeat="(day,hours) in time"> {{day}} </span>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="right floated author">
-                                <a class="flip-over">
-        
-        See courses <i class="fa fa-angle-right"></i>
-      </a>
-                            </div>
-                        </div>
+        <div class="col-xs-6 col-sm-4" id="program-col" ng-repeat="program in ranked_programs | filter: search | orderBy:'-rank'" emit-last-repeater-element>
+            <div class="ui card">
+                <div class="content">
+                    <a class="header">{{program.program}}</a>
+                    <div class="meta">
+                        <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ','}}</span>
+                    </div>
+                    <div class="description">
+                        <span ng-repeat="sub in program.subjects">
+                        {{sub}}{{$last ? '' : ', '}}
+                        </span>
                     </div>
                 </div>
-                <div class="side">
-                    <div class="ui  card">
-                        <div class="content">
-                            <a class="header">Courses</a>
-                            <div class="description">
-                                <div class="ui mini list" ng-if="program.course_data != []">
-                                    <div class="item" ng-repeat="course in program.course_data | unique: 'course_id' | orderBy: 'course_id'">{{course.subject}} {{course.catalog_num}}: {{course.title}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="right floated author">
-                                <a class="button flip-over">
+                <div class="extra content">
+                    <div class="right floated author">
+                        <a class="flip-over">
         
         See courses <i class="fa fa-angle-right"></i>
       </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

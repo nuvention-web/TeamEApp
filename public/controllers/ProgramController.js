@@ -20,8 +20,6 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', function($sc
 
     });
 
-    console.log($scope.ranked_programs)
-
     $scope.$on('LastRepeaterElement', function() {
         $('.special.cards .image').dimmer({
             on: 'hover'

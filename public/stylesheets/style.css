@@ -200,6 +200,13 @@ input.search:focus, input.search:focus {
     padding-top: calc(2.5%);
 }
 
+#program-col {
+    display: flex;
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
 
 /* RESPONSIVE CLASSES */
 
