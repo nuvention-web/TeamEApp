@@ -3,9 +3,24 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', function($sc
     $scope.user = CurrentUser.get(function(data) {
         $scope.user = data.local;
     });
+    $scope.ranked_programs = [];
+    Programs.query().$promise.then(function(result) {
+        $scope.unordered_programs = result;
+        angular.forEach($scope.unordered_programs, function(program) {
+            var dst = {};
+            var r = {};
+            if (program.school.indexOf($scope.user.school) > -1)
+                r.rank = 1;
+            else
+                r.rank = -1;
 
+            angular.merge(dst, program, r);
+            this.push(dst);
+        }, $scope.ranked_programs);
 
-    $scope.programs = Programs.query();
+    });
+
+    console.log($scope.ranked_programs)
 
     $scope.$on('LastRepeaterElement', function() {
         $('.special.cards .image').dimmer({
