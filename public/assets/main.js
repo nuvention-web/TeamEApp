@@ -67,6 +67,7 @@ $(document).ready(function() {
                 .dropdown('clear');
         });
 
+    
 
 
 });

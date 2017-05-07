@@ -18,10 +18,6 @@ router.get('/logout', function(req, res){
   res.redirect('/');
 });
 
-// router.post('/logout', function(req, res){
-//   req.logOut();
-//   res.redirect('/');
-// });
 
 router.get('/signup', function(req, res){
   res.redirect('/#/signup');

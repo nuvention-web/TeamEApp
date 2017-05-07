@@ -40,13 +40,24 @@
                 </div>
                 <div class="extra content">
                     <div class="right floated author">
-                        <a class="flip-over">
-        
-        See courses <i class="fa fa-angle-right"></i>
-      </a>
+                        <div class="ui showmodal button">More info <i class="fa fa-angle-right"></i></div>
+                    </div>
+                </div>
+                <div class="ui modal">
+                <i class="close icon"></i>
+                <div class="header">
+                    {{program.program}}
+                </div>
+                <div class="image content">
+
+                    <div class="description">
+                        Description of the program
+                        <!-- <div ng-repeat="for (day, time) in program.times">{{day}}: {{time}}{{$last ? '' : ','}}</div> -->
                     </div>
                 </div>
             </div>
+            </div>
+
         </div>
     </div>
 </div>

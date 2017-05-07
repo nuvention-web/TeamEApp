@@ -24,6 +24,8 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', function($sc
         $('.special.cards .image').dimmer({
             on: 'hover'
         });
+        $('.ui.modal')
+        .modal('attach events', '.showmodal.button', 'show');
 
         $('.shape').shape({ width: '30%' });
 
