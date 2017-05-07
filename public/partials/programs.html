@@ -1,29 +1,31 @@
 <div class="container-fluid padding-top-bottom extra-padding-sides">
     <div class="row extra-padding-top">
         <div class="col col-xs-12 col-sm-6 margin-bottom">
-        <div class="row start-sm center-xs start-xs">
-            <div class="ui action left icon input">
-                <i class="search icon"></i>
-                <input name="search" id="search_id" placeholder="Search..." type="text" ng-model="userInput" ng-keydown="applySearchEnter($event)" onkeydown="uniKeyCode(event)" autofocus="autofocus">
-                <div class="ui blue button" ng-click="applySearch()" onclick="trackFunction()">Search</div>
-                <br>
-                <div class="ui blue button" ng-click="clearing()">View All</div>
-            </div>
+            <div class="row start-sm center-xs start-xs">
+                <div class="ui action left icon input">
+                    <i class="search icon"></i>
+                    <input name="search" id="search_id" placeholder="Search..." type="text" ng-model="userInput" ng-keydown="applySearchEnter($event)" onkeydown="uniKeyCode(event)" autofocus="autofocus">
+                    <div class="ui blue button" ng-click="applySearch()" onclick="trackFunction()">Search</div>
+                    <br>
+                    <div class="ui blue button" ng-click="clearing()">View All</div>
+                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6">
-            <div class="row end-sm center-xs">
-                <button class="col-xs-3 ui button active" value="">All</button>
-                <button class="col-xs-3 ui button" value="Weinberg College of Arts and Sciences">Weinberg</button>
-                <button class="col-xs-3 ui button" value="Weinberg College of Arts and Sciences">Weinberg</button>
+            <div class="row end-sm center-xs middle-xs">
+                <select class="ui dropdown clear-school" ng-model="schoolFilter"><i class="dropdown icon"></i>
+                    <option class="item" value="" selected>Select School</option>
+                    <option value="Weinberg College of Arts and Sciences">Weinberg</option>
+                    <option value="McCormick School of Engineering and Applied Science">McCormick</option>
+                </select>
+                <div class="margin-left ui button clear-school">Clear</div>
             </div>
-                
         </div>
     </div>
 </div>
 <div class="container-fluid padding-top-bottom extra-padding-sides">
     <div class="row">
-        <div class="col-xs-6 col-sm-4" id="program-col" ng-repeat="program in ranked_programs | filter: search | orderBy:'-rank'" emit-last-repeater-element>
+        <div class="col-xs-6 col-sm-4" id="program-col" ng-repeat="program in ranked_programs | filter: search | filter: schoolFilter| orderBy:'-rank'" emit-last-repeater-element>
             <div class="ui card">
                 <div class="content">
                     <a class="header">{{program.program}}</a>

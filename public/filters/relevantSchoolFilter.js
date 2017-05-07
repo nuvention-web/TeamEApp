@@ -1,4 +1,4 @@
-app.filter('irrelevantfilter.js', [function($filter) {
+app.filter('relevantSchoolFilter', [function($filter) {
   return function(inputArray, searchCriteria, target) {
     if (!angular.isDefined(searchCriteria) || searchCriteria == '') {
       return inputArray;
@@ -8,9 +8,11 @@ app.filter('irrelevantfilter.js', [function($filter) {
       if (program.school.indexOf(target) > -1) {
 
         data.push(item);
-
+        
       }
     });
+
     return data;
+
   };
 }]);
