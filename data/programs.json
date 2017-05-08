@@ -38,17 +38,13 @@
 }, {
 	"program": "Tech Tutoring,",
 	"location": "MG28",
-	"days": [
-		"Monday",
-		"Tuesday",
-		"Wednesday",
-		"Thursday"
-	],
-	"hours": [
-		"2:00PM-5:00PM",
-		"7:00PM-10:00PM"
-	],
-	"classes": [
+	"times": {
+		"Monday" : "2:00PM-5:00PM, 7:00PM-10:00PM",
+		"Tuesday" : "2:00PM-5:00PM, 7:00PM-10:00PM",
+		"Wednesday" : "2:00PM-5:00PM, 7:00PM-10:00PM",
+		"Thursday" : "2:00PM-5:00PM, 7:00PM-10:00PM"
+	},
+	"classes" : [
 		"Math",
 		"Chem",
 		"Physics",
@@ -62,8 +58,7 @@
 }, {
 	"program": "Academic Mentoring Program (AMP)",
 	"location": "",
-	"days": "",
-	"hours": "",
+	"times" : {},
 	"classes": [
 		"Bio 215",
 		"Bio 217",
@@ -82,8 +77,7 @@
 }, {
 	"program": "Gateway Science Workshop (GSW)",
 	"location": "",
-	"days": "",
-	"hours": "",
+	"times" : {},
 	"classes": [
 		"Bio 215",
 		"Bio 217",
@@ -120,15 +114,14 @@
 }, {
 	"program": "Math Place",
 	"location": "Room 232, Schaffner Library, Wieboldt Hall",
-	"days": [
-		"Monday",
-		"Tuesday",
-		"Wednesday",
-		"Thursday",
-		"Saturday",
-		"Sunday"
-	],
-	"hours": "",
+	"times": {
+		"Monday" : "",
+		"Tuesday" : "",
+		"Wednesday" : "",
+		"Thursday" : "",
+		"Saturday" : "",
+		"Sunday" : ""
+	},
 	"classes": "",
 	"contact": "scsmathplace@northwestern.edu",
 	"commitment": "Appointment",

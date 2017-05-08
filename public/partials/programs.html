@@ -1,87 +1,69 @@
-<div class="ui container">
-    <div class="ui one column centered grid">
-        <div class="column">
-            <div class="ui action left icon input">
-                <i class="search icon"></i>
-                <input name="search" id="search_id" placeholder="Search..." type="text" ng-model="userInput" ng-keydown="applySearchEnter($event)" onkeydown="uniKeyCode(event)" autofocus="autofocus">
-                <div class="ui blue button" ng-click="applySearch()" onclick="trackFunction()">Search</div>
-                <br><div class="ui blue button" ng-click="clearing()">View All</div>
+<div class="container-fluid padding-top-bottom extra-padding-sides">
+    <div class="row extra-padding-top">
+        <div class="col col-xs-12 col-sm-6 margin-bottom">
+            <div class="row start-sm center-xs start-xs">
+                <div class="ui action left icon input">
+                    <i class="search icon"></i>
+                    <input name="search" id="search_id" placeholder="Search..." type="text" ng-model="userInput" ng-keydown="applySearchEnter($event)" onkeydown="uniKeyCode(event)" autofocus="autofocus">
+                    <div class="ui primary button" ng-click="applySearch()" onclick="trackFunction()">Search</div>
+                    <br>
+                    <div class="ui primary button" ng-click="clearing()">View All</div>
                 </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="row end-sm center-xs middle-xs">
+                <select class="ui dropdown clear-school" ng-model="schoolFilter"><i class="dropdown icon"></i>
+                    <option class="item" value="" selected>Select School</option>
+                    <option value="Weinberg College of Arts and Sciences">Weinberg</option>
+                    <option value="McCormick School of Engineering and Applied Science">McCormick</option>
+                </select>
+                <div class="margin-left ui button clear-school">Clear</div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="ui container">
-    <div class="ui three column grid">
-        <div class="ui shape column" ng-repeat="program in programs | filter: search" emit-last-repeater-element>
-            <div class="ui sides">
-                <div class="active side">
-                    <div class="ui special cards">
-                        <div class="card">
-                            <div class="blurring dimmable image">
-                                <div class="ui dimmer">
-                                    <div class="content">
-                                        <!-- <div class="ui mini list" ng-if="program.course_data != []">
-							<div class="item" ng-repeat="course in program.course_data | unique: 'course_id' | orderBy: 'course_id'">{{course.subject}} {{course.catalog_num}}: {{course.title}}
-							</div>
-						</div> -->
-                                        <div class="center">
-                                            <div class="ui secondary button">See Classes <i class="fa fa-caret-right"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <img src="assets/images/wireframe/image-square.png">
-                            </div>
-                            <div class="content">
-                                <a class="header" target="_blank" href="http://www.google.com" ng-click="trackInfo(program)">{{program.program}}</a>
-                                <div class="meta">
-                                    <span class="group">{{program.location}}</span>
-                                </div>
-                                <div class="description">
-                                    <span ng-repeat="time in program.times">
-						<span ng-repeat="(day,hours) in time"> {{day}} </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="extra content">
-                                <div class="right floated author">
-                                    <a class="flip-over">
-        
-        See courses <i class="fa fa-angle-right"></i>
-      </a>
-                                </div>
-                            </div>
-                        </div>
+<div class="container-fluid padding-top-bottom extra-padding-sides">
+    <div class="row">
+        <div class="col-xs-6 col-sm-4" id="program-col" ng-repeat="program in ranked_programs | filter: search | filter: schoolFilter| orderBy:'-rank'" emit-last-repeater-element>
+            <div class="ui card">
+                <div class="content">
+                    <a class="header" target="_blank" href="http://www.google.com" ng-click="trackInfo(program)">{{program.program}}</a>
+                    <div class="meta">
+                        <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ','}}</span>
+                    </div>
+                    <div class="description">
+                        <span ng-repeat="sub in program.subjects">
+                        {{sub}}{{$last ? '' : ', '}}
+                        </span>
                     </div>
                 </div>
-                <div class="side">
-                    <div class="ui card">
-                        <div class="content">
-                            <a class="header">Courses</a>
-                            <div class="description">
-                                <div class="ui mini list" ng-if="program.course_data != []">
-                                    <div class="item" ng-repeat="course in program.course_data | unique: 'course_id' | orderBy: 'course_id'">{{course.subject}} {{course.catalog_num}}: {{course.title}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="right floated author">
-                                <a class="button flip-over">
-        
-        See courses <i class="fa fa-angle-right"></i>
-      </a>
-                            </div>
-                        </div>
+                <div class="extra content">
+                    <div class="right floated author">
+                        <div class="ui showmodal button" data-target="#dialogTestDialog{{$index}}">More info <i class="fa fa-angle-right"></i></div>
+                    </div>
+                </div>
+                <div class="ui modal" id="dialogTestDialog{{$index}}">
+                <i class="close icon"></i>
+                <div class="header">
+                    {{program.program}}
+                </div>
+                <div class="image content">
+
+                    <div class="description">
+                        Description of the program
+                        <!-- <div ng-repeat="for (day, time) in program.times">{{day}}: {{time}}{{$last ? '' : ','}}</div> -->
                     </div>
                 </div>
             </div>
+            </div>
+
         </div>
     </div>
 </div>
 <div id="HelpID" ng-controller="ProgramController"></div>
 <script src="assets/main.js"></script>
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -90,9 +72,7 @@
 
   ga('create', 'UA-98210332-1', 'auto');
   ga('send', 'pageview');
-
 </script>
-
 <script>
 function trackFunction() {
 ga('send', {
@@ -121,9 +101,8 @@ ga('send', {
 }
 
 function uniKeyCode(e) {
-    if (e.keyCode === 13)
-    {
-    	trackFunction();
+    if (e.keyCode === 13) {
+        trackFunction();
     }
 }
 

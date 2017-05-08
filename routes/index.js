@@ -18,6 +18,7 @@ router.get('/logout', function(req, res){
   res.redirect('/');
 });
 
+
 router.get('/signup', function(req, res){
   res.redirect('/#/signup');
 });
