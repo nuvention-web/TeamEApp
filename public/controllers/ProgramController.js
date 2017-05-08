@@ -1,9 +1,15 @@
-app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', function($scope, Programs, CurrentUser) {
-
+app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', '$routeParams', 'Programs', function($scope, Programs, CurrentUser, $routeParams, Programs) {
     $scope.user = CurrentUser.get(function(data) {
         $scope.user = data.local;
     });
-    $scope.ranked_programs = [];
+
+    $scope.program = Programs[$routeParams.id];
+
+    $scope.programs = Programs.query();
+    
+    $scope.editing = [];
+  
+      $scope.ranked_programs = [];
     Programs.query().$promise.then(function(result) {
         $scope.unordered_programs = result;
         angular.forEach($scope.unordered_programs, function(program) {
@@ -51,6 +57,22 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', function($sc
     $scope.clearing = function() {
         $scope.userInput = "";
         $scope.search = "";
+    };
+  
+    $scope.major = function() {
+        return $scope.user.major;
+    };
+
+    $scope.school = function() {
+        return $scope.user.school;
+    };
+
+    $scope.graduation = function() {
+        return $scope.user.graduation;
+    };
+
+    $scope.trackInfo = function(prog) {
+        getInfo(prog.program)
     };
 
 }]);
