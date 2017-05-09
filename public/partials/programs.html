@@ -56,7 +56,7 @@
                         <h4>Subjects:</h4>
                              <span ng-repeat="sub in program.subjects">{{sub}}{{$last ? '' : ', '}}</span>
                         </div>
-                        <div class="description">{{program.times}}
+                        <div class="description">
                             <div ng-if="program.times != '[{}]'">
                                 <span ng-repeat="set in program.times">
                                     <h4>Hours:</h4>
