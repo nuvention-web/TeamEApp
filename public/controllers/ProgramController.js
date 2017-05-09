@@ -6,10 +6,10 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', '$routeParam
     $scope.program = Programs[$routeParams.id];
 
     $scope.programs = Programs.query();
-    
+
     $scope.editing = [];
-  
-      $scope.ranked_programs = [];
+
+    $scope.ranked_programs = [];
     Programs.query().$promise.then(function(result) {
         $scope.unordered_programs = result;
         angular.forEach($scope.unordered_programs, function(program) {
@@ -26,12 +26,21 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', '$routeParam
 
     });
 
+    $scope.index = 0;
+
     $scope.$on('LastRepeaterElement', function() {
         $('.special.cards .image').dimmer({
             on: 'hover'
         });
-        $('.ui.modal')
-        .modal('attach events', '.showmodal.button', 'show');
+
+        $(document).ready(function(){
+            $.each($scope.ranked_programs, function(index) {
+                $('.ui.modal#dialogTestDialog' + String(index))
+                .modal('attach events', '.showmodal.button.' + String(index), 'show');
+            
+            });
+        });
+
 
         $('.shape').shape({ width: '30%' });
 
@@ -58,7 +67,7 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', '$routeParam
         $scope.userInput = "";
         $scope.search = "";
     };
-  
+
     $scope.major = function() {
         return $scope.user.major;
     };
