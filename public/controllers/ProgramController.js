@@ -29,23 +29,13 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', '$routeParam
     $scope.index = 0;
 
     $scope.$on('LastRepeaterElement', function() {
-        $('.special.cards .image').dimmer({
-            on: 'hover'
-        });
-
         $(document).ready(function(){
             $.each($scope.ranked_programs, function(index) {
                 $('.ui.modal#dialogTestDialog' + String(index))
                 .modal('attach events', '.showmodal.button.' + String(index), 'show');
             
             });
-        });
-
-
-        $('.shape').shape({ width: '30%' });
-
-        $('.flip-over').on('click', function() {
-            $(this).closest('.shape').shape('flip over');
+            $('.ui.accordion').accordion();
         });
     });
 

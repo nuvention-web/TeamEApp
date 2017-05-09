@@ -91,6 +91,10 @@ input.search:focus, input.search:focus {
     margin-bottom: 1em !important;
 }
 
+.margin-top {
+    margin-top: 1em !important;
+}
+
 .no-margin-bottom {
     margin-bottom: 0 !important;
 }
@@ -222,6 +226,16 @@ input.search:focus, input.search:focus {
 .extra-padding-sides {
     padding-left: calc(5%) !important;
     padding-right: calc(5%) !important;
+}
+
+
+.ui.modal {
+    max-height: 50vh !important;
+    top: 35vh !important;
+}
+.ui.modal .classes.content {
+    max-height: 20vh !important;
+    overflow-y: scroll;
 }
 
 

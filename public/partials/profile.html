@@ -37,7 +37,7 @@
                     <div class="col-sm-12 col-xs-12 padding-top-bottom ui shape" ng-repeat="program in programs | filter: user.school" emit-last-repeater-element>
                         <div class="ui card">
                             <div class="content">
-                                <a class="header">{{program.program}}</a>
+                                <a class="header" target="_blank" href="{{program.link}}" ng-click="trackInfo(program)">{{program.program}}</a>
                                 <div class="meta">
                                     <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ','}}</span>
                                 </div>
@@ -49,10 +49,45 @@
                             </div>
                             <div class="extra content">
                                 <div class="right floated author">
-                                    <a class="flip-over">
-        
-        See courses <i class="fa fa-angle-right"></i>
-      </a>
+                                    <div class="ui showmodal button {{$index}}" data-target="#dialogTestDialog{{$index}}">More info <i class="fa fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                            <div class="ui modal long scrolling" id="dialogTestDialog{{$index}}">
+                                <i class="close icon"></i>
+                                <div class="header">
+                                    {{program.program}}
+                                    <h6>
+                            <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ','}}</span>
+                        </h6>
+                                </div>
+                                <div class="content">
+                                    <div class="description">
+                                        <h4>Subjects:</h4>
+                                        <span ng-repeat="sub in program.subjects">{{sub}}{{$last ? '' : ', '}}</span>
+                                    </div>
+                                    <div class="description">
+                                        <div ng-if="program.times != []">
+                                            <span ng-repeat="set in program.times">
+                                    <h4>Hours:</h4>
+                                    <span ng-repeat="(day, time) in set">{{day}}: {{time}}<br></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="description" ng-if="program.course_data != []">
+                                        <div class="ui accordion">
+                                            <div class="title">
+                                                <h4>Courses <i class="fa fa-angle-down"></i></h4>
+                                            </div>
+                                            <div class="content classes">
+                                                <div class="item" ng-repeat="course in program.course_data | unique: 'course_id' | orderBy: 'course_id'">{{course.subject}} {{course.catalog_num}}: {{course.title}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <a class="link margin-top" href="mailto:nuventionteame@gmail.com"><i class="fa fa-envelope"></i> Contact</a>
+                                        <a class="link margin-left" href="{{program.link}}" target="_blank"><i class="fa fa-globe"></i> Website</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
