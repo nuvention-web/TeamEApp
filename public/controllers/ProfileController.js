@@ -4,7 +4,15 @@ app.controller('ProfileCtrl', ['$scope', 'CurrentUser', 'Programs', function($sc
 		$scope.user = data.local;
 	});
 
-	$scope.programs = Programs.query();
+	$scope.programs = [];
+    Programs.query().$promise.then(function(result) {
+        $scope.unordered_programs = result;
+        angular.forEach($scope.unordered_programs, function(program) {
+            if (program.school.indexOf($scope.user.school) > -1)
+                this.push(program);
+        }, $scope.programs);
+
+    });
 	$scope.index = 0;
 	$scope.$on('LastRepeaterElement', function() {
 

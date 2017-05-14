@@ -1,21 +1,24 @@
-/* @import url('https://fonts.googleapis.com/css?family=Open+Sans'); */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-body {
+html {
     width: 100%;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    top: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
     position: absolute;
     font-family: 'Open Sans', sans-serif;
 }
 
-ng-view.ng-scope {
-    position: absolute;
-    top: 0;
-    margin-top: 3em;
+body {
     width: 100%;
-    min-height: calc(100% - 3em);
+    box-sizing: border-box;
+    margin: 0 !important;
+    padding: 0;
+    background-color: #FCFCFC;
+    top: 0 !important;
+    position: absolute;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .description {
@@ -97,6 +100,14 @@ input.search:focus, input.search:focus {
 
 .no-margin-bottom {
     margin-bottom: 0 !important;
+}
+
+.no-margin-left {
+    margin-left: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
 }
 
 .nav-logo {
@@ -238,7 +249,13 @@ input.search:focus, input.search:focus {
     overflow-y: scroll;
 }
 
+.weinberg {
+    color: #B74242;
+}
 
+.mccormick {
+    color: #ED9153;
+}
 /* RESPONSIVE CLASSES */
 
 
@@ -266,7 +283,7 @@ input.search:focus, input.search:focus {
         width: 100%;
     }
     #header #nav {
-        margin-top: 5em;
+        top: 5em;
     }
     .menu-children {
         padding-left: 0 !important;

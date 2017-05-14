@@ -1,4 +1,4 @@
-<div class="container-fluid extra-padding-top">
+<div class="container-fluid">
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 margin-top col-sm-offset-0 col-sm-5 center-sm">
             <h1>Profile</h1>
@@ -39,7 +39,7 @@
                             <div class="content">
                                 <a class="header" target="_blank" href="{{program.link}}" ng-click="trackInfo(program)">{{program.program}}</a>
                                 <div class="meta">
-                                    <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ','}}</span>
+                                    <span class="group" ng-repeat="s in program.school" ng-class="{weinberg: s=='Weinberg College of Arts and Sciences', mccormick: s=='McCormick School of Engineering and Applied Science'}">{{s}}{{$last ? '' : ','}}</span>
                                 </div>
                                 <div class="description">
                                     <span ng-repeat="sub in program.subjects">
@@ -49,7 +49,7 @@
                             </div>
                             <div class="extra content">
                                 <div class="right floated author">
-                                    <div class="ui showmodal button {{$index}}" data-target="#dialogTestDialog{{$index}}">More info <i class="fa fa-angle-right"></i></div>
+                                    <div class="ui showmodal secondary button {{$index}}" data-target="#dialogTestDialog{{$index}}">More info <i class="fa fa-angle-right"></i></div>
                                 </div>
                             </div>
                             <div class="ui modal long scrolling" id="dialogTestDialog{{$index}}">
@@ -57,7 +57,7 @@
                                 <div class="header">
                                     {{program.program}}
                                     <h6>
-                            <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ','}}</span>
+                            <span class="group" ng-repeat="s in program.school" ng-class="{weinberg: s=='Weinberg College of Arts and Sciences', mccormick: s=='McCormick School of Engineering and Applied Science'}">{{s}}{{$last ? '' : ','}}</span>
                         </h6>
                                 </div>
                                 <div class="content">
@@ -66,14 +66,14 @@
                                         <span ng-repeat="sub in program.subjects">{{sub}}{{$last ? '' : ', '}}</span>
                                     </div>
                                     <div class="description">
-                                        <div ng-if="program.times != []">
+                                        <div ng-show="program.times != null">
                                             <span ng-repeat="set in program.times">
                                     <h4>Hours:</h4>
                                     <span ng-repeat="(day, time) in set">{{day}}: {{time}}<br></span>
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="description" ng-if="program.course_data != []">
+                                    <div class="description" ng-show="program.course_data != null">
                                         <div class="ui accordion">
                                             <div class="title">
                                                 <h4>Courses <i class="fa fa-angle-down"></i></h4>
