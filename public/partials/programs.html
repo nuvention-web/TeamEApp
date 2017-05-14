@@ -18,7 +18,7 @@
                     <option value="Weinberg College of Arts and Sciences">Weinberg</option>
                     <option value="McCormick School of Engineering and Applied Science">McCormick</option>
                 </select>
-                <div class="margin-left ui button clear-school">Clear</div>
+                <div class="margin-left ui primary button clear-school">Clear</div>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
                 <div class="content">
                     <a class="header" target="_blank" href="{{program.link}}" ng-click="trackInfo(program)">{{program.program}}</a>
                     <div class="meta">
-                        <span class="group" ng-repeat="s in program.school" ng-class="{weinberg: s=='Weinberg College of Arts and Sciences', mccormick: s=='McCormick School of Engineering and Applied Science'}">{{s}}{{$last ? '' : ','}}</span>
+                        <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ','}}</span>
                     </div>
                     <div class="description">
                         <span ng-repeat="sub in program.subjects">
@@ -48,7 +48,7 @@
                     <div class="header">
                         {{program.program}}
                         <h6>
-                            <span class="group" ng-repeat="s in program.school" ng-class="{weinberg: s=='Weinberg College of Arts and Sciences', mccormick: s=='McCormick School of Engineering and Applied Science'}">{{s}}{{$last ? '' : ','}}</span>
+                            <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ', '}}</span>
                         </h6>
                     </div>
                     <div class="content">
