@@ -1,7 +1,7 @@
 <div class="container-fluid padding-top-bottom extra-padding-sides">
-    <div class="row extra-padding-top">
+    <div class="row">
         <div class="col col-xs-12 col-sm-6 margin-bottom">
-            <div class="row start-sm center-xs start-xs">
+            <div class="row start-sm start-xs">
                 <div class="ui action left icon input">
                     <i class="search icon"></i>
                     <input name="search" id="search_id" placeholder="Search..." type="text" ng-model="userInput" ng-keydown="applySearchEnter($event)" onkeydown="uniKeyCode(event)" autofocus="autofocus">
@@ -12,76 +12,74 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-6">
-            <div class="row end-sm center-xs middle-xs">
+            <div class="row end-sm middle-xs">
                 <select class="ui dropdown clear-school" ng-model="schoolFilter"><i class="dropdown icon"></i>
                     <option class="item" value="" selected>Select School</option>
                     <option value="Weinberg College of Arts and Sciences">Weinberg</option>
                     <option value="McCormick School of Engineering and Applied Science">McCormick</option>
                 </select>
-                <div class="margin-left ui button clear-school">Clear</div>
+                <div class="margin-left ui primary button clear-school">Clear</div>
             </div>
         </div>
     </div>
 </div>
-<div class="container-fluid padding-top-bottom extra-padding-sides">
+<div class="container-fluid padding-bottom extra-padding-sides">
     <div class="row">
         <div class="col-xs-6 col-sm-4" id="program-col" ng-repeat="program in ranked_programs | filter: search | filter: schoolFilter| orderBy:'-rank'" emit-last-repeater-element>
             <div class="ui card">
-                            <div class="content">
-                                <a class="header" target="_blank" href="{{program.link}}" ng-click="trackInfo(program)">{{program.program}}</a>
-                                <div class="meta">
-                                    <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ','}}</span>
-                                </div>
-                                <div class="description">
-                                    <span ng-repeat="sub in program.subjects">
+                <div class="content">
+                    <a class="header" target="_blank" href="{{program.link}}" ng-click="trackInfo(program)">{{program.program}}</a>
+                    <div class="meta">
+                        <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ','}}</span>
+                    </div>
+                    <div class="description">
+                        <span ng-repeat="sub in program.subjects">
                         {{sub}}{{$last ? '' : ', '}}
                         </span>
-                                </div>
-                            </div>
-                            <div class="extra content">
-                                <div class="right floated author">
-                                    <div class="ui showmodal button {{$index}}" data-target="#dialogTestDialog{{$index}}">More info <i class="fa fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="ui modal long scrolling" id="dialogTestDialog{{$index}}">
-                                <i class="close icon"></i>
-                                <div class="header">
-                                    {{program.program}}
-                                    <h6>
-                            <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ','}}</span>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <div class="right floated author">
+                        <div class="ui showmodal secondary button {{$index}}" data-target="#dialogTestDialog{{$index}}">More info <i class="fa fa-angle-right"></i></div>
+                    </div>
+                </div>
+                <div class="ui modal long scrolling" id="dialogTestDialog{{$index}}">
+                    <i class="close icon"></i>
+                    <div class="header">
+                        {{program.program}}
+                        <h6>
+                            <span class="group" ng-repeat="s in program.school">{{s}}{{$last ? '' : ', '}}</span>
                         </h6>
-                                </div>
-                                <div class="content">
-                                    <div class="description">
-                                        <h4>Subjects:</h4>
-                                        <span ng-repeat="sub in program.subjects">{{sub}}{{$last ? '' : ', '}}</span>
-                                    </div>
-                                    <div class="description">
-                                        <div ng-if="program.times != []">
-                                            <span ng-repeat="set in program.times">
+                    </div>
+                    <div class="content">
+                        <div class="description">
+                            <h4>Subjects:</h4>
+                            <span ng-repeat="sub in program.subjects">{{sub}}{{$last ? '' : ', '}}</span>
+                        </div>
+                        <div class="description" ng-show="program.times != null">
+                                <span ng-repeat="set in program.times">
                                     <h4>Hours:</h4>
                                     <span ng-repeat="(day, time) in set">{{day}}: {{time}}<br></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="description" ng-if="program.course_data != []">
-                                        <div class="ui accordion">
-                                            <div class="title">
-                                                <h4>Courses <i class="fa fa-angle-down"></i></h4>
-                                            </div>
-                                            <div class="content classes">
-                                                <div class="item" ng-repeat="course in program.course_data | unique: 'course_id' | orderBy: 'course_id'">{{course.subject}} {{course.catalog_num}}: {{course.title}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="description">
-                                        <a class="link margin-top" href="mailto:nuventionteame@gmail.com"><i class="fa fa-envelope"></i> Contact</a>
-                                        <a class="link margin-left" href="{{program.link}}" target="_blank"><i class="fa fa-globe"></i> Website</a>
+                                </span>
+                        </div>
+                        <div class="description" ng-show="program.course_data != null">
+                            <div class="ui accordion">
+                                <div class="title">
+                                    <h4>Courses <i class="fa fa-angle-down"></i></h4>
+                                </div>
+                                <div class="content classes">
+                                    <div class="item" ng-repeat="course in program.course_data | unique: 'course_id' | orderBy: 'course_id'">{{course.subject}} {{course.catalog_num}}: {{course.title}}
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="description">
+                            <a class="link margin-top" href="mailto:nuventionteame@gmail.com"><i class="fa fa-envelope"></i> Contact</a>
+                            <a class="link margin-left" href="{{program.link}}" target="_blank"><i class="fa fa-globe"></i> Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

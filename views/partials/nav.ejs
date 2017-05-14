@@ -1,27 +1,38 @@
-<header id="header">
-    <div class="left">
-        <a href="/programs"><img class="nav-img" src="assets/images/logo_horizontal.png" alt="GATEWAY"></a>
+<div class="ui stackable menu">
+    <div class="left menu">
+        <div class="item">
+            <a href="/programs"><img class="ui small image" src="assets/images/logo_horizontal.png" alt="GATEWAY"></a>
+        </div>
     </div>
-    <div class="show-on-xs-only hide-on-sm-and-up right hamburger"><i class="fa fa-mob fa-bars"></i></div>
-    <nav id="nav">
-        <ul class="right menu-responsive menu-horizontal">
-            <li class="menu-item menu-has-children">
-                <a class="menu-link" href="">Find Resources<i class="fa fa-angle-down"></i></a>
-                <ul class="menu-children">
-                    <li class="menu-item"><a href="/programs" class="menu-link">Resource Programs</a></li>
-                    <li class="menu-item"><a href="/programs" class="menu-link">Peer Mentors</a></li>
-                    <li class="menu-item"><a href="/programs" class="menu-link">Student Groups</a></li>
-                </ul>
-            </li>
-            <li class="menu-item menu-has-children">
-                <a class="menu-link" href="">My Account<i class="fa fa-angle-down"></i></a>
-                <ul class="menu-children">
-                    <li class="menu-item"><a class="menu-link" href="/profile">My Profile</a></li>
-                    <li class="menu-item"><a href="" class="menu-link">Appointments</a></li>
-                    <li class="menu-item"><a href="" class="menu-link">Messages</a></li>
-                </ul>
-            </li>
-            <li class="menu-item"><a class="menu-link" href="/logout" ng-click="logout()">Logout</a></li>
-        </ul>
-    </nav>
-</header>
+    <div class="right stackable menu">
+        <div class="ui dropdown item">
+            Find Resources <i class="margin-left fa fa-angle-down"></i>
+            <div class="menu">
+                <div class="item">
+                    <a href="/programs" class="">Resource Programs</a>
+                </div>
+                <div class="item">
+                    <a href="/programs" class="">Peer Mentors</a>
+                </div>
+                <div class="item">
+                    <a href="/programs" class="">Student Groups</a>
+                </div>
+            </div>
+        </div>
+        <div class="ui dropdown item">
+            My Account <i class="margin-left fa fa-angle-down"></i>
+            <div class="menu">
+                <div class="item">
+                    <a href="/profile" class="">My Profile</a>
+                </div>
+                <div class="item">
+                    <a href="/programs" class="">My Appointments</a>
+                </div>
+                <div class="item">
+                    <a href="/programs" class="">My Messages</a>
+                </div>
+            </div>
+        </div>
+            <a href="/login" class="item" ng-click="logout()"> Logout <i class="margin-left fa fa-sign-out"></i></a>        
+    </div>
+</div>
