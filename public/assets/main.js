@@ -1,12 +1,15 @@
 $(document).ready(function() {
+//     .body {
+//     margin-top: 4em !important;
+// }
 
-    var fix_widths = function() {
-        $drpdowns = $('.ui.menu .dropdown.item');
-        $drpdowns.each(function() {
-            var w_child = $(this).children('.menu').width();
-            $(this).width(w_child)
-        });
-    }
+    // var fix_widths = function() {
+    //     $drpdowns = $('.ui.menu .dropdown.item');
+    //     $drpdowns.each(function() {
+    //         var w_child = $(this).children('.menu').width();
+    //         $(this).width(w_child)
+    //     });
+    // }
     
     fix_widths();
     $(".fa.fa-mob").click(function() {

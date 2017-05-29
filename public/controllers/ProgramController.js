@@ -25,6 +25,7 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', '$routeParam
         }, $scope.ranked_programs);
 
     });
+    console.log($scope.ranked_programs);
 
     $scope.index = 0;
 
