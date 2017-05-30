@@ -12,6 +12,10 @@ $(document).ready(function() {
         }
     });
 
+    $('#calendar').fullCalendar({
+        schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives'
+    });
+
     $('.shape').shape();
 
     $('.ui.menu a.item')
