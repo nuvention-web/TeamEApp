@@ -11,7 +11,7 @@ $(document).ready(function() {
     //     });
     // }
     
-    fix_widths();
+    // fix_widths();
     $(".fa.fa-mob").click(function() {
         $(".menu-responsive.menu-hamburger").slideToggle();
         $(".fa-mob").toggleClass("fa fa-bars").toggleClass("remove icon");
