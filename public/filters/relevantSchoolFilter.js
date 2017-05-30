@@ -11,16 +11,6 @@ app.filter('relevantSchoolFilter', [function($filter) {
         
       }
     });
-    if (data != []) {
-      return data
-    }
-    angular.forEach(inputArray, function(program) {
-      if (program.school.indexOf(target) > -1) {
-
-        data.push(item);
-        
-      }
-    });
 
     return data;
 
