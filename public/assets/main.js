@@ -1,14 +1,5 @@
 $(document).ready(function() {
 
-    var fix_widths = function() {
-        $drpdowns = $('.ui.menu .dropdown.item');
-        $drpdowns.each(function() {
-            var w_child = $(this).children('.menu').width();
-            $(this).width(w_child)
-        });
-    }
-    
-    // fix_widths();
     $(".fa.fa-mob").click(function() {
         $(".menu-responsive.menu-hamburger").slideToggle();
         $(".fa-mob").toggleClass("fa fa-bars").toggleClass("remove icon");
