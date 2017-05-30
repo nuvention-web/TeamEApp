@@ -13,8 +13,8 @@ $(document).ready(function() {
     });
 
     $('#calendar').fullCalendar({
-    schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives'
-});
+        schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives'
+    });
 
     $('.shape').shape();
 
@@ -38,8 +38,5 @@ $(document).ready(function() {
             $('.clear-school.ui.dropdown')
                 .dropdown('clear');
         });
-
-    
-
 
 });
