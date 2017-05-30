@@ -35,10 +35,6 @@ router.get('/programs', function(req, res){
   res.redirect('/#/programs');
 });
 
-router.get('/appointments', function(req, res){
-  res.redirect('/#/appointments');
-});
-
 router.post('/signup', passport.authenticate('local-signup', {
   successRedirect: '/profile',
   failureRedirect: '/signup',
