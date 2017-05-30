@@ -12,12 +12,6 @@ $(document).ready(function() {
         }
     });
 
-    
-    
-
-    
-
-
     $('.shape').shape();
 
     $('.ui.menu a.item')
@@ -40,8 +34,5 @@ $(document).ready(function() {
             $('.clear-school.ui.dropdown')
                 .dropdown('clear');
         });
-
-    
-
 
 });
