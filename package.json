@@ -24,6 +24,7 @@
     "express": "~4.14.1",
     "express-jwt": "^5.1.0",
     "express-session": "~1.0.0",
+    "fullcalendar-scheduler": "^1.6.2",
     "jsonwebtoken": "^7.3.0",
     "method-override": "~1.0.0",
     "mongoose": "^4.8.3",
@@ -31,7 +32,6 @@
     "passport": "~0.1.17",
     "passport-google-oauth": "~0.1.5",
     "passport-local": "~0.1.6",
-    "serve-favicon": "~2.3.2",
-    "fullcalendar-scheduler": "4.5.0"
+    "serve-favicon": "~2.3.2"
   }
 }
