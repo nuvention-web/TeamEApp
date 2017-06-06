@@ -7,10 +7,6 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', '$routeParam
 
     $scope.programs = Programs.query();
 
-    $scope.loadAddToCalendar = function() {
-        addtocalendar.load();
-    }; 
-
     $scope.editing = [];
 
     $scope.ranked_programs = [];
@@ -27,6 +23,7 @@ app.controller('ProgramCtrl', ['$scope', 'Programs', 'CurrentUser', '$routeParam
             angular.merge(dst, program, r);
             this.push(dst);
         }, $scope.ranked_programs);
+
     });
 
     $scope.index = 0;
